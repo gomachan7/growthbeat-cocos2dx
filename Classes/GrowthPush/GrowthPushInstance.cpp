@@ -20,4 +20,4 @@ GrowthPush* GrowthPush::getInstance() {
     return instance;
 }
 
-NS_GROWTHPush_END
+NS_GROWTHPUSH_END
