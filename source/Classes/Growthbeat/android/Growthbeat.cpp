@@ -20,7 +20,7 @@
 USING_NS_CC;
 USING_NS_GROWTHBEAT;
 
-static const char *const JavaClassName = "com/growthbeat/cocos2dx/GrowthbeatJNI";
+static const char *const JavaClassName = "com/growthbeat/GrowthbeatJNI";
 
 growthbeat::Growthbeat::Growthbeat() {};
 

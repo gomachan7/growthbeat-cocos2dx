@@ -20,22 +20,9 @@
 USING_NS_CC;
 USING_NS_GROWTHANALYTICS;
 
-static const char *const JavaClassName = "com/growthanalytics/cocos2dx/GrowthAnalyticsJNI";
+static const char *const JavaClassName = "com/growthbeat/analytics/GrowthAnalyticsJNI";
 
 growthanalytics::GrowthAnalytics::GrowthAnalytics() {};
-
-void GrowthAnalytics::initialize(const std::string& applicationId, const std::string& credentialId) {
-    JniMethodInfo t;
-    
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "initialize", "(Ljava/lang/String;Ljava/lang/String;)V")) {
-    	jstring jApplicationId = t.env->NewStringUTF(applicationId.c_str());
-    	jstring jCredentialId = t.env->NewStringUTF(credentialId.c_str());
-        t.env->CallStaticVoidMethod(t.classID, t.methodID, jApplicationId, jCredentialId);
-        t.env->DeleteLocalRef(jApplicationId);
-        t.env->DeleteLocalRef(jCredentialId);
-        t.env->DeleteLocalRef(t.classID);
-    }
-}
 
 void GrowthAnalytics::track(const std::string& eventId) {
 	JniMethodInfo t;
@@ -145,7 +132,7 @@ void GrowthAnalytics::tag(const std::string& tagId, const std::string& value) {
 
 void GrowthAnalytics::open(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "open", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -153,7 +140,7 @@ void GrowthAnalytics::open(void) {
 }
 void GrowthAnalytics::close(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "close", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -161,7 +148,7 @@ void GrowthAnalytics::close(void) {
 }
 void GrowthAnalytics::purchase(int price, const std::string& category, const std::string& product) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "purchase", "(ILjava/lang/String;Ljava/lang/String;)V")) {
         jstring jCategory = t.env->NewStringUTF(category.c_str());
         jstring jProduct = t.env->NewStringUTF(product.c_str());
@@ -174,7 +161,7 @@ void GrowthAnalytics::purchase(int price, const std::string& category, const std
 
 void GrowthAnalytics::setUserId(const std::string& userId) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setUserId", "(Ljava/lang/String;)V")) {
         jstring jUserId = t.env->NewStringUTF(userId.c_str());
         t.env->CallStaticVoidMethod(t.classID, t.methodID, jUserId);
@@ -184,7 +171,7 @@ void GrowthAnalytics::setUserId(const std::string& userId) {
 }
 void GrowthAnalytics::setName(const std::string& name) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setName", "(Ljava/lang/String;)V")) {
         jstring jName = t.env->NewStringUTF(name.c_str());
         t.env->CallStaticVoidMethod(t.classID, t.methodID, jName);
@@ -194,7 +181,7 @@ void GrowthAnalytics::setName(const std::string& name) {
 }
 void GrowthAnalytics::setAge(int age) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setAge", "(I)V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID, age);
         t.env->DeleteLocalRef(t.classID);
@@ -202,7 +189,7 @@ void GrowthAnalytics::setAge(int age) {
 }
 void GrowthAnalytics::setGender(GAGender gender) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setGender", "(I)V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID, gender);
         t.env->DeleteLocalRef(t.classID);
@@ -210,7 +197,7 @@ void GrowthAnalytics::setGender(GAGender gender) {
 }
 void GrowthAnalytics::setLevel(int level) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setLevel", "(I)V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID, level);
         t.env->DeleteLocalRef(t.classID);
@@ -218,7 +205,7 @@ void GrowthAnalytics::setLevel(int level) {
 }
 void GrowthAnalytics::setDevelopment(bool development) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setDevelopment", "(Z)V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID, development);
         t.env->DeleteLocalRef(t.classID);
@@ -226,7 +213,7 @@ void GrowthAnalytics::setDevelopment(bool development) {
 }
 void GrowthAnalytics::setDeviceModel(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setDeviceModel", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -234,7 +221,7 @@ void GrowthAnalytics::setDeviceModel(void) {
 }
 void GrowthAnalytics::setOS(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setOS", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -242,7 +229,7 @@ void GrowthAnalytics::setOS(void) {
 }
 void GrowthAnalytics::setLanguage(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setLanguage", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -250,7 +237,7 @@ void GrowthAnalytics::setLanguage(void) {
 }
 void GrowthAnalytics::setTimeZone(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setTimeZone", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -258,7 +245,7 @@ void GrowthAnalytics::setTimeZone(void) {
 }
 void GrowthAnalytics::setTimeZoneOffset(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setTimeZoneOffset", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -266,7 +253,7 @@ void GrowthAnalytics::setTimeZoneOffset(void) {
 }
 void GrowthAnalytics::setAppVersion(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setAppVersion", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -274,7 +261,7 @@ void GrowthAnalytics::setAppVersion(void) {
 }
 void GrowthAnalytics::setRandom(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setRandom", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -283,16 +270,16 @@ void GrowthAnalytics::setRandom(void) {
 
 void GrowthAnalytics::setAdvertisingId(const std::string& Temp) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setAdvertisingId", "(Ljava/lang/String;)V")) {
     	t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
     }
-    
+
 }
 void GrowthAnalytics::setBasicTags(void) {
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setBasicTags", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
