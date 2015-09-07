@@ -22,21 +22,14 @@ int environmentFromCocos(growthpush::GPEnvironment environment);
 growthpush::GrowthPush::GrowthPush(void)
 {}
 
-growthpush::GrowthPush::~GrowthPush(void)
-{}
-
-void growthpush::GrowthPush::initialize(int applicationId, const std::string& secret, growthpush::GPEnvironment environment, bool debug) {
-    [GrowthPushCCInternal setApplicationId:applicationId secret:[NSString stringWithUTF8String:secret.c_str()] environment:environment debug:debug];
+void growthpush::GrowthPush::registerDeviceToken(growthpush::GPEnvironment environment) {
+    [GrowthPushCCInternal requestDeviceTokenWithEnvironment:environment];
 }
 
-void growthpush::GrowthPush::registerDeviceToken(void) {
-    [GrowthPushCCInternal requestDeviceToken];
-}
-
-void growthpush::GrowthPush::registerDeviceToken(const std::string& senderId) {
+void growthpush::GrowthPush::registerDeviceToken(const std::string& senderId, growthpush::GPEnvironment environment) {
 
     CC_UNUSED_PARAM(senderId);
-    registerDeviceToken();
+    registerDeviceToken(environment);
 
 }
 
@@ -73,7 +66,7 @@ void growthpush::GrowthPush::setOpenNotificationCallback(Application *target, gr
     CCAssert(selector, "selector should not be NULL");
 
     [GrowthPushCCInternal setDidReceiveNotificationBlock:^(NSString *json) {
-         cocos2d::Value jsonValue = GbJsonHelper::parseJson2Value([json UTF8String]);
+         cocos2d::Value jsonValue = growthbeat::GbJsonHelper::parseJson2Value([json UTF8String]);
          (target->*selector)(jsonValue);
      }];
 

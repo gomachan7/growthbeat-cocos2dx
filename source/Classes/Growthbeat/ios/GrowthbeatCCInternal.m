@@ -18,15 +18,15 @@
                                                      credentialId:credentialId];
 }
 
-+ (void)start() {
++ (void)start {
   [[Growthbeat sharedInstance] start];
 }
 
-+ (void)stop() {
++ (void)stop {
   [[Growthbeat sharedInstance] stop];
 }
 
-+ (void)setLoggerSilent(bool silent) {
++ (void)setLoggerSilent:(bool)silent {
   [[Growthbeat sharedInstance] setLoggerSilent:silent];
 }
 

@@ -10,6 +10,7 @@
 #define __GROWTHBEATPLUGIN_GROWTHBEAT_H__
 
 #include "cocos2d.h"
+#include "GbMacros.h"
 
 NS_GROWTHBEAT_BEGIN
 

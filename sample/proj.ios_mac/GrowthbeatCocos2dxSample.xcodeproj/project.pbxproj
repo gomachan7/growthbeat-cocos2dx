@@ -10,7 +10,6 @@
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -58,7 +57,6 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -76,11 +74,15 @@
 		C182B4081B9D64B600AEAFB4 /* GrowthMessageCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3EC1B9D64B600AEAFB4 /* GrowthMessageCCInternal.m */; };
 		C182B4091B9D64B600AEAFB4 /* GrowthPush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3EF1B9D64B600AEAFB4 /* GrowthPush.cpp */; };
 		C182B40A1B9D64B600AEAFB4 /* GrowthPushInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F31B9D64B600AEAFB4 /* GrowthPushInstance.cpp */; };
-		C182B40B1B9D64B600AEAFB4 /* GPAppDelegateIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F61B9D64B600AEAFB4 /* GPAppDelegateIntercepter.m */; };
 		C182B40C1B9D64B600AEAFB4 /* GrowthPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */; };
 		C182B40D1B9D64B600AEAFB4 /* GrowthPushCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */; };
-		C182B40E1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3FD1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m */; };
 		C182B4111B9D67BB00AEAFB4 /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */; };
+		C182B4141B9D978800AEAFB4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4131B9D978800AEAFB4 /* AdSupport.framework */; };
+		C182B4161B9D979D00AEAFB4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */; };
+		C182B4181B9D97D800AEAFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4171B9D97D800AEAFB4 /* Security.framework */; };
+		C182B41A1B9D982300AEAFB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4191B9D982300AEAFB4 /* UIKit.framework */; };
+		C182B41C1B9D985900AEAFB4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */; };
+		C182B41F1B9D98FE00AEAFB4 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -201,16 +203,16 @@
 		C182B3F11B9D64B600AEAFB4 /* GPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMacros.h; sourceTree = "<group>"; };
 		C182B3F21B9D64B600AEAFB4 /* GrowthPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPush.h; sourceTree = "<group>"; };
 		C182B3F31B9D64B600AEAFB4 /* GrowthPushInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPushInstance.cpp; sourceTree = "<group>"; };
-		C182B3F51B9D64B600AEAFB4 /* GPAppDelegateIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAppDelegateIntercepter.h; sourceTree = "<group>"; };
-		C182B3F61B9D64B600AEAFB4 /* GPAppDelegateIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPAppDelegateIntercepter.m; sourceTree = "<group>"; };
-		C182B3F71B9D64B600AEAFB4 /* GPAppDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAppDelegateWrapper.h; sourceTree = "<group>"; };
-		C182B3F81B9D64B600AEAFB4 /* GPAppDelegateWrapperDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAppDelegateWrapperDelegate.h; sourceTree = "<group>"; };
 		C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthPush.mm; sourceTree = "<group>"; };
 		C182B3FA1B9D64B600AEAFB4 /* GrowthPushCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPushCCInternal.h; sourceTree = "<group>"; };
 		C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthPushCCInternal.m; sourceTree = "<group>"; };
-		C182B3FC1B9D64B600AEAFB4 /* UIApplication+GrowthPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+GrowthPush.h"; sourceTree = "<group>"; };
-		C182B3FD1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+GrowthPush.m"; sourceTree = "<group>"; };
 		C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
+		C182B4131B9D978800AEAFB4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		C182B4171B9D97D800AEAFB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		C182B4191B9D982300AEAFB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.2.4.0.dylib; sourceTree = DEVELOPER_DIR; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -222,11 +224,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
+				C182B41F1B9D98FE00AEAFB4 /* libiconv.2.4.0.dylib in Frameworks */,
+				C182B41C1B9D985900AEAFB4 /* SystemConfiguration.framework in Frameworks */,
+				C182B41A1B9D982300AEAFB4 /* UIKit.framework in Frameworks */,
+				C182B4181B9D97D800AEAFB4 /* Security.framework in Frameworks */,
+				C182B4161B9D979D00AEAFB4 /* CFNetwork.framework in Frameworks */,
+				C182B4141B9D978800AEAFB4 /* AdSupport.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
@@ -309,6 +315,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */,
+				C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */,
+				C182B4191B9D982300AEAFB4 /* UIKit.framework */,
+				C182B4171B9D97D800AEAFB4 /* Security.framework */,
+				C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */,
+				C182B4131B9D978800AEAFB4 /* AdSupport.framework */,
 				C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
@@ -523,15 +535,9 @@
 		C182B3F41B9D64B600AEAFB4 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3F51B9D64B600AEAFB4 /* GPAppDelegateIntercepter.h */,
-				C182B3F61B9D64B600AEAFB4 /* GPAppDelegateIntercepter.m */,
-				C182B3F71B9D64B600AEAFB4 /* GPAppDelegateWrapper.h */,
-				C182B3F81B9D64B600AEAFB4 /* GPAppDelegateWrapperDelegate.h */,
 				C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */,
 				C182B3FA1B9D64B600AEAFB4 /* GrowthPushCCInternal.h */,
 				C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */,
-				C182B3FC1B9D64B600AEAFB4 /* UIApplication+GrowthPush.h */,
-				C182B3FD1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -682,7 +688,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C182B40B1B9D64B600AEAFB4 /* GPAppDelegateIntercepter.m in Sources */,
 				C182B4011B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m in Sources */,
 				C182B3FF1B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp in Sources */,
 				C182B4071B9D64B600AEAFB4 /* GrowthMessage.mm in Sources */,
@@ -691,7 +696,6 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				C182B4031B9D64B600AEAFB4 /* GrowthbeatInstance.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				C182B40E1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m in Sources */,
 				C182B40C1B9D64B600AEAFB4 /* GrowthPush.mm in Sources */,
 				C182B4081B9D64B600AEAFB4 /* GrowthMessageCCInternal.m in Sources */,
 				C182B4061B9D64B600AEAFB4 /* GrowthMessage.cpp in Sources */,

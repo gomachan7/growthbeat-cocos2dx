@@ -32,7 +32,7 @@ public:
 /**
  * Set device token
  */
-void registerDeviceToken(void);
+void registerDeviceToken(GPEnvironment environment);
 
 /**
  * Set device token

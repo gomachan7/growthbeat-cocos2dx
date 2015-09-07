@@ -95,7 +95,7 @@
     [[GrowthAnalytics sharedInstance] setRandom];
 }
 + (void)setAdvertisingId:(NSString *)idfa {
-    [[GrowthAnalytics sharedInstance] setAdvertisingId:idfa];
+    [[GrowthAnalytics sharedInstance] setAdvertisingId];
 }
 + (void)setBasicTags {
     [[GrowthAnalytics sharedInstance] setBasicTags];

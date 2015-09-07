@@ -17,7 +17,7 @@
 + (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
 + (void)start;
 + (void)stop;
-+ (void)setLoggerSilent(bool silent);
++ (void)setLoggerSilent:(bool)silent;
 
 @end
 

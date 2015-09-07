@@ -13,8 +13,7 @@
 @interface GrowthPushCCInternal : NSObject
 
 /* GrowthPush SDK interface */
-+ (void)setApplicationId:(NSInteger)applicationId secret:(NSString *)secret environment:(int)environment debug:(BOOL)debug;
-+ (void)requestDeviceToken;
++ (void)requestDeviceTokenWithEnvironment:(int)environment;
 + (void)trackEvent:(NSString *)name;
 + (void)trackEvent:(NSString *)name value:(NSString *)value;
 + (void)setTag:(NSString *)name;
