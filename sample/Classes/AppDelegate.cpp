@@ -1,10 +1,20 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-//#include "Growthbeat.h"
+#include "Growthbeat.h"
+#include "GrowthPush.h"
+#include "GrowthAnalytics.h"
 
 USING_NS_CC;
-//USING_NS_GROWTHBEAT;
+USING_NS_GROWTHBEAT;
+USING_NS_GROWTHPUSH;
+USING_NS_GROWTHANALYTICS;
+
+#ifdef DEBUG
+GPEnvironment kGPEnvironment = GPEnvironmentDevelopment;
+#else
+GPEnvironment kGPEnvironment = GPEnvironmentProduction;
+#endif
 
 AppDelegate::AppDelegate() {
 
@@ -54,6 +64,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // run
     director->runWithScene(scene);
+    
+    // Growthbeat initializing.
+    Growthbeat::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
+    GrowthPush::getInstance()->requestDeviceToken("YOUR_SENDER_ID", kGPEnvironment);
+    Growthbeat::getInstance()->start();
 
     return true;
 }
@@ -64,6 +79,8 @@ void AppDelegate::applicationDidEnterBackground() {
 
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    
+    Growthbeat::getInstance()->stop();
 }
 
 // this function will be called when the app is active again
@@ -72,4 +89,7 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    
+
+    Growthbeat::getInstance()->start();
 }

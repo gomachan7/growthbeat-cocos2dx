@@ -32,14 +32,14 @@ public:
 /**
  * Set device token
  */
-void registerDeviceToken(GPEnvironment environment);
+void requestDeviceToken(GPEnvironment environment);
 
 /**
  * Set device token
  *
  * @param senderID Google Project Number
  */
-void registerDeviceToken(const std::string &senderId, GPEnvironment environment);
+void requestDeviceToken(const std::string &senderId, GPEnvironment environment);
 
 /**
  * Track event

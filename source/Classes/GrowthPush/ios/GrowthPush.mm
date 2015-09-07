@@ -22,14 +22,14 @@ int environmentFromCocos(growthpush::GPEnvironment environment);
 growthpush::GrowthPush::GrowthPush(void)
 {}
 
-void growthpush::GrowthPush::registerDeviceToken(growthpush::GPEnvironment environment) {
+void growthpush::GrowthPush::requestDeviceToken(growthpush::GPEnvironment environment) {
     [GrowthPushCCInternal requestDeviceTokenWithEnvironment:environment];
 }
 
-void growthpush::GrowthPush::registerDeviceToken(const std::string& senderId, growthpush::GPEnvironment environment) {
+void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId, growthpush::GPEnvironment environment) {
 
     CC_UNUSED_PARAM(senderId);
-    registerDeviceToken(environment);
+    requestDeviceToken(environment);
 
 }
 
