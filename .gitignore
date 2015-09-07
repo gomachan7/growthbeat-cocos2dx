@@ -71,4 +71,7 @@ local.properties
 .pydevproject
 .project
 .settings
+obj
+assets
+libs/armeabi
 .DS_Store

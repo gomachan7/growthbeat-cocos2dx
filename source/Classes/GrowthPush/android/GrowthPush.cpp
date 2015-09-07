@@ -43,7 +43,7 @@ JNIEXPORT void JNICALL Java_com_growthpush_cocos2dx_Cocos2dxBridge_didOpenRemote
      */
     if ((s_target != nullptr) && (s_selector != nullptr)) {
         std::string json = JniHelper::jstring2string(jJson);
-        auto jsonValue = GbJsonHelper::parseJson2Value(json.c_str());
+        auto jsonValue = growthbeat::GbJsonHelper::parseJson2Value(json.c_str());
         (s_target->*s_selector)(jsonValue);
     }
 }
@@ -53,25 +53,7 @@ JNIEXPORT void JNICALL Java_com_growthpush_cocos2dx_Cocos2dxBridge_didOpenRemote
 GrowthPush::GrowthPush(void)
 {}
 
-GrowthPush::~GrowthPush(void) {
-    // FIXME: for C++11
-    // s_callback = nullptr;
-    s_target = nullptr;
-    s_selector = nullptr;
-}
-
-void GrowthPush::initialize(int applicationId, const std::string& secret, GPEnvironment environment, bool debug) {
-    JniMethodInfo t;
-
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "initialize", "(ILjava/lang/String;IZ)V")) {
-        jstring jSecret = t.env->NewStringUTF(secret.c_str());
-        t.env->CallStaticVoidMethod(t.classID, t.methodID, applicationId, jSecret, environment, debug);
-        t.env->DeleteLocalRef(jSecret);
-        t.env->DeleteLocalRef(t.classID);
-    }
-}
-
-void GrowthPush::registerDeviceToken(void) {
+void GrowthPush::registerDeviceToken(GPEnvironment environment) {
     // Do nothing on Android
 }
 
