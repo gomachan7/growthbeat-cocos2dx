@@ -8,9 +8,7 @@
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #import <Foundation/Foundation.h>
-
-#import <GrowthPush/EGPOption.h>
-#import <GrowthPush/GPEnvironment.h>
+#import <Growthbeat/GPEnvironment.h>
 
 @interface GrowthPushCCInternal : NSObject
 

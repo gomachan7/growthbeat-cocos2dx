@@ -10,8 +10,7 @@
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #import <Foundation/Foundation.h>
-#import <GrowthbeatCore/GrowthbeatCore.h>
-#import <GrowthAnalytics/GrowthAnalytics.h>
+#import <Growthbeat/GrowthAnalytics.h>
 
 @interface GrowthAnalyticsCCInternal : NSObject
 

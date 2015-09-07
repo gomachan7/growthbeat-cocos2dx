@@ -2,16 +2,16 @@
 //  GrowthbeatCCInternal.m
 //  growthbeat-cocos2dx
 //
-//  Created by Shigeru Ogawa on 2015/02/04.
+//  Created by Shigeru Ogawa on 2015/09/07.
 //  Copyright (c) 2015 SIROK, Inc. All rights reserved.
 //
 
 #include "ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
-#import "GrowthAnalyticsCCInternal.h"
+#import "GrowthbeatCCInternal.h"
 
-@implementation GrowthAnalyticsCCInternal
+@implementation GrowthbeatCCInternal
 
 + (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId {
     [[Growthbeat sharedInstance] initializeWithApplicationId:applicationId

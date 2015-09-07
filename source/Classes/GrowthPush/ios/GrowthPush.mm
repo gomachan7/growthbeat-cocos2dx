@@ -10,7 +10,7 @@
 
 #include "GrowthPush.h"
 
-#include "../Growthbeat/GbJsonHelper.h"
+#include "../../Growthbeat/GbJsonHelper.h"
 #import "GrowthPushCCInternal.h"
 
 USING_NS_CC;

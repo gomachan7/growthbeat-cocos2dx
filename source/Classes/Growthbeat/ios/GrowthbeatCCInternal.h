@@ -1,8 +1,8 @@
 //
 //  GrowthbeatCCInternal.h
-//  growthanalytics-cocos2dx
+//  growthbeat-cocos2dx
 //
-//  Created by Baekwoo Chung on 2015/02/04.
+//  Created by Shigeru Ogawa on 2015/09/07.
 //  Copyright (c) 2015 SIROK, Inc. All rights reserved.
 //
 
@@ -14,7 +14,6 @@
 
 @interface GrowthbeatCCInternal : NSObject
 
-/* Growthbeat SDK interface */
 + (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
 + (void)start;
 + (void)stop;

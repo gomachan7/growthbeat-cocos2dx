@@ -15,17 +15,17 @@
 
 USING_NS_CC;
 
-growthanalytics::Growthbeat::Growthbeat() {};
+growthbeat::Growthbeat::Growthbeat() {};
 
-void growthanalytics::Growthbeat::initialize(const std::string& applicationId, const std::string& credentialId) {
+void growthbeat::Growthbeat::initialize(const std::string& applicationId, const std::string& credentialId) {
     [GrowthbeatCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()]
                                               credentialId:[NSString stringWithUTF8String:credentialId.c_str()]];
 }
 
-void growthanalytics::Growthbeat::start(void) {
+void growthbeat::Growthbeat::start(void) {
     [GrowthbeatCCInternal start];
 }
-void growthanalytics::Growthbeat::stop(void) {
+void growthbeat::Growthbeat::stop(void) {
     [GrowthbeatCCInternal stop];
 }
 

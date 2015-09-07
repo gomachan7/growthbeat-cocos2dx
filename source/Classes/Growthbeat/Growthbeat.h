@@ -9,6 +9,8 @@
 #ifndef __GROWTHBEATPLUGIN_GROWTHBEAT_H__
 #define __GROWTHBEATPLUGIN_GROWTHBEAT_H__
 
+#include "cocos2d.h"
+
 NS_GROWTHBEAT_BEGIN
 
 class CC_DLL Growthbeat

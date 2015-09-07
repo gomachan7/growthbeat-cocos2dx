@@ -1,5 +1,5 @@
 //
-//  GbJSONHelper.h
+//  GbJsonHelper.h
 //  growthbeat-cocos2dx
 //
 //  Created by Shigeru Ogawa on 2015/09/07.
@@ -16,7 +16,7 @@
 
 NS_GROWTHBEAT_BEGIN
 
-class GbJSONHelper
+class GbJsonHelper
 {
 public:
 

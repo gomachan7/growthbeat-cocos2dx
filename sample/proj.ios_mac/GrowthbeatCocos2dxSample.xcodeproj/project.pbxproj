@@ -80,6 +80,7 @@
 		C182B40C1B9D64B600AEAFB4 /* GrowthPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */; };
 		C182B40D1B9D64B600AEAFB4 /* GrowthPushCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */; };
 		C182B40E1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3FD1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m */; };
+		C182B4111B9D67BB00AEAFB4 /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -209,6 +210,7 @@
 		C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthPushCCInternal.m; sourceTree = "<group>"; };
 		C182B3FC1B9D64B600AEAFB4 /* UIApplication+GrowthPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+GrowthPush.h"; sourceTree = "<group>"; };
 		C182B3FD1B9D64B600AEAFB4 /* UIApplication+GrowthPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+GrowthPush.m"; sourceTree = "<group>"; };
+		C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -231,6 +233,7 @@
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
+				C182B4111B9D67BB00AEAFB4 /* Growthbeat.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +309,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -460,8 +464,8 @@
 			isa = PBXGroup;
 			children = (
 				C182B3E11B9D64B600AEAFB4 /* Growthbeat.mm */,
-				C182B3E21B9D64B600AEAFB4 /* GrowthbeatCCInternal.h */,
 				C182B3E31B9D64B600AEAFB4 /* GrowthbeatCCInternal.m */,
+				C182B3E21B9D64B600AEAFB4 /* GrowthbeatCCInternal.h */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -735,6 +739,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/a13048/Repository/growthbeat-cocos2dx/submodules/growthbeat-ios",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -771,6 +779,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/a13048/Repository/growthbeat-cocos2dx/submodules/growthbeat-ios",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
