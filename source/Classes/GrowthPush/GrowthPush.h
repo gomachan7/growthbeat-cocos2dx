@@ -30,16 +30,6 @@ public:
 	static GrowthPush* getInstance();
 
 /**
- * Initialize GrowthPush instance and register the client device if not yet been registered
- *
- * @param applicationId Application ID
- * @param secret Secret key for application
- * @param environment Build configuration (debug or release)
- * @param debug Debug mode
- */
-void initialize(int applicationId, const std::string &secret, GPEnvironment environment, bool debug);
-
-/**
  * Set device token
  */
 void registerDeviceToken(void);
@@ -49,7 +39,7 @@ void registerDeviceToken(void);
  *
  * @param senderID Google Project Number
  */
-void registerDeviceToken(const std::string &senderId);
+void registerDeviceToken(const std::string &senderId, GPEnvironment environment);
 
 /**
  * Track event

@@ -9,7 +9,7 @@
 
 #import "GrowthPushCCInternal.h"
 
-#import <GrowthPush/GrowthPush.h>
+#import <Growthbeat/GrowthPush.h>
 
 static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 
@@ -25,36 +25,32 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 
 }
 
-+ (void) setApplicationId:(NSInteger)applicationId secret:(NSString *)secret environment:(int)environment debug:(BOOL)debug {
-    [GrowthPush setApplicationId:applicationId secret:secret environment:[self convertIntToGPEnvironment:environment] debug:debug];
-}
-
-+ (void) requestDeviceToken {
-    [GrowthPush requestDeviceToken];
++ (void) requestDeviceTokenWithEnvironment:(int)environment {
+    [[GrowthPush sharedInstance] requestDeviceTokenWithEnvironment:[self convertIntToGPEnvironment:environment]];
 }
 
 + (void) trackEvent:(NSString *)name {
-    [GrowthPush trackEvent:name];
+    [[GrowthPush sharedInstance] trackEvent:name];
 }
 
 + (void) trackEvent:(NSString *)name value:(NSString *)value {
-    [GrowthPush trackEvent:name value:value];
+    [[GrowthPush sharedInstance] trackEvent:name value:value];
 }
 
 + (void) setTag:(NSString *)name {
-    [GrowthPush setTag:name];
+    [[GrowthPush sharedInstance] setTag:name];
 }
 
 + (void) setTag:(NSString *)name value:(NSString *)value {
-    [GrowthPush setTag:name value:value];
+    [[GrowthPush sharedInstance] setTag:name value:value];
 }
 
 + (void) setDeviceTags {
-    [GrowthPush setDeviceTags];
+    [[GrowthPush sharedInstance] setDeviceTags];
 }
 
 + (void) clearBadge {
-    [GrowthPush clearBadge];
+    [[GrowthPush sharedInstance] clearBadge];
 }
 
 + (void) setDidReceiveNotificationBlock:(void (^)(NSString *json))block {
@@ -82,11 +78,11 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 }
 
 + (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [GrowthPush setDeviceToken:deviceToken];
+    [[GrowthPush sharedInstance] setDeviceToken:deviceToken];
 }
 
 + (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [GrowthPush setDeviceToken:nil];
+    [[GrowthPush sharedInstance] setDeviceToken:nil];
 }
 
 + (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

@@ -18,12 +18,12 @@
 # include "cocos2d.h"
 # include "platform/android/jni/JniHelper.h"
 
-# include "GPJsonHelper.h"
+# include "../../Growthbeat/GbJsonHelper.h"
 
 USING_NS_CC;
 USING_NS_GROWTHPUSH;
 
-static const char *const JavaClassName = "com/growthpush/cocos2dx/GrowthPushJNI";
+static const char *const JavaClassName = "com/growthpush/GrowthPushJNI";
 
 // FIXME: for C++11
 // static gpDidReceiveRemoteNotificationCallback s_callback = nullptr;
@@ -43,7 +43,7 @@ JNIEXPORT void JNICALL Java_com_growthpush_cocos2dx_Cocos2dxBridge_didOpenRemote
      */
     if ((s_target != nullptr) && (s_selector != nullptr)) {
         std::string json = JniHelper::jstring2string(jJson);
-        auto jsonValue = GPJsonHelper::parseJson2Value(json.c_str());
+        auto jsonValue = GbJsonHelper::parseJson2Value(json.c_str());
         (s_target->*s_selector)(jsonValue);
     }
 }
@@ -75,12 +75,12 @@ void GrowthPush::registerDeviceToken(void) {
     // Do nothing on Android
 }
 
-void GrowthPush::registerDeviceToken(const std::string& senderId) {
+void GrowthPush::registerDeviceToken(const std::string& senderId, GPEnvironment environment) {
     JniMethodInfo t;
 
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "register", "(Ljava/lang/String;)V")) {
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;IZ)V")) {
         jstring jSenderId = t.env->NewStringUTF(senderId.c_str());
-        t.env->CallStaticVoidMethod(t.classID, t.methodID, jSenderId);
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jSenderId, environment);
         t.env->DeleteLocalRef(jSenderId);
         t.env->DeleteLocalRef(t.classID);
     }

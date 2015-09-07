@@ -1,22 +1,22 @@
 //
-//  GPJsonHelper.h
-//  growthpush-cocos2dx
+//  GbJSONHelper.h
+//  growthbeat-cocos2dx
 //
-//  Created by TSURUDA Ryo on 2013/12/11.
-//  Copyright (c) 2013年 TSURUDA Ryo. All rights reserved.
+//  Created by Shigeru Ogawa on 2015/09/07.
+//  Copyright (c) 2015年 SIROK, Inc. All rights reserved.
 //
 
-#ifndef __GROWTHPUSHPLUGIN_GPJSONHELPER_H__
-#define __GROWTHPUSHPLUGIN_GPJSONHELPER_H__
+#ifndef __GROWTHBEATPLUGIN_GBJSONHELPER_H__
+#define __GROWTHBEATPLUGIN_GBJSONHELPER_H__
 
 #include "cocos2d.h"
 #include "json/document.h"
 
-#include "GPMacros.h"
+#include "GbMacros.h"
 
-NS_GROWTHPUSH_BEGIN
+NS_GROWTHBEAT_BEGIN
 
-class GPJsonHelper
+class GbJSONHelper
 {
 public:
 
@@ -131,6 +131,6 @@ static cocos2d::Value convertJson2Null(const rapidjson::Value &v){
 }
 };
 
-NS_GROWTHPUSH_END
+NS_GROWTHBEAT_END
 
-#endif  // __GROWTHPUSHPLUGIN_GPJSONHELPER_H__
+#endif  // __GROWTHBEATPLUGIN_GBJSONHELPER_H__

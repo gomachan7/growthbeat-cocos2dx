@@ -8,10 +8,10 @@
 #include "ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
-# include "GrowthPush.h"
+#include "GrowthPush.h"
 
-# include "GPJsonHelper.h"
-# import "GrowthPushCCInternal.h"
+#include "../Growthbeat/GbJsonHelper.h"
+#import "GrowthPushCCInternal.h"
 
 USING_NS_CC;
 
@@ -73,7 +73,7 @@ void growthpush::GrowthPush::setOpenNotificationCallback(Application *target, gr
     CCAssert(selector, "selector should not be NULL");
 
     [GrowthPushCCInternal setDidReceiveNotificationBlock:^(NSString *json) {
-         cocos2d::Value jsonValue = GPJsonHelper::parseJson2Value([json UTF8String]);
+         cocos2d::Value jsonValue = GbJsonHelper::parseJson2Value([json UTF8String]);
          (target->*selector)(jsonValue);
      }];
 
