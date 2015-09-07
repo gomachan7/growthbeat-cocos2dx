@@ -1,4 +1,4 @@
-package com.growthpush.cocos2dx;
+package com.growthpush;
 
 import com.growthpush.bridge.ExternalFrameworkBroadcastReceiver;
 

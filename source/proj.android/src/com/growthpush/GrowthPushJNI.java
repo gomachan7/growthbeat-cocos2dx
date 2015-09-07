@@ -1,20 +1,11 @@
-package com.growthpush.cocos2dx;
+package com.growthpush;
 
-import android.content.Context;
-
-import com.growthpush.GrowthPush;
 import com.growthpush.model.Environment;
 
 public class GrowthPushJNI {
 
-	private static Context context = null;
-
-	public static void initialize(int applicationId, final String secret, int environment, boolean debug) {
-		GrowthPush.getInstance().initialize(context, applicationId, secret, convertIntToEnvironment(environment), debug);
-	}
-
-	public static void register(final String senderId) {
-		GrowthPush.getInstance().register(senderId);
+	public static void requestRegistrationId(final String senderId, final int environment) {
+		GrowthPush.getInstance().requestRegistrationId(senderId, convertIntToEnvironment(environment));
 	}
 
 	public static void trackEvent(final String name) {
@@ -35,10 +26,6 @@ public class GrowthPushJNI {
 
 	public static void setDeviceTags() {
 		GrowthPush.getInstance().setDeviceTags();
-	}
-
-	public static void setContext(Context context) {
-		GrowthPushJNI.context = context;
 	}
 
 	public static Environment convertIntToEnvironment(int environment) {
