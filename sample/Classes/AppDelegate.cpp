@@ -1,10 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-#include "Growthbeat.h"
-#include "GrowthPush.h"
-#include "GrowthAnalytics.h"
-
 USING_NS_CC;
 USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;

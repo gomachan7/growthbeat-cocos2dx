@@ -745,7 +745,7 @@
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/a13048/Repository/growthbeat-cocos2dx/submodules/growthbeat-ios",
+					"$(SRCROOT)/../../submodules/growthbeat-ios",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -785,7 +785,7 @@
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/a13048/Repository/growthbeat-cocos2dx/submodules/growthbeat-ios",
+					"$(SRCROOT)/../../submodules/growthbeat-ios",
 				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
