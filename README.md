@@ -17,16 +17,17 @@ Cocos SDK 3.0 above.
 git clone https://github.com/SIROK/growthbeat-cocos2dx.git
 cd ./growthbeat-cocos2dx/ ; git submodule update --init --recursive
 cd ./submodules/cocos2d-x/ ; ./download-deps.py
-cd ../../ ; open sample/proj.ios_mac/sample.xcodeproj
+cd ../../ ; open sample/proj.ios_mac/GrowthbeatCocos2dxSample.xcodeproj
 ```
 
 ## Install
 
 ### iOS
 
-1. Copy Classes/Growthbeat, Classes/GrowthPush and Classes/GrowthAnalytics to /path/to/your_project/Classes/
-1. Copy Growthbeat.framework and GrowthbeatCore.framework to /path/to/your_project/proj.ios/Frameworks/
+1. Copy Classes/Growthbeat, Classes/GrowthPush and Classes/GrowthAnalytics to /path/to/your_project/Classes/ 
+1. Copy Growthbeat.framework to /path/to/your_project/proj.ios/Frameworks/
 1. Added Classes in folder and framework to Xcode project.
+1. Add dependecy frameworks. Foundation.framework, Security.framework, SystemConfiguration.framework, AdSupport.framework, CFNetwork.framework and libiconv.2.4.0.dylib.
 
 ### Android
 
