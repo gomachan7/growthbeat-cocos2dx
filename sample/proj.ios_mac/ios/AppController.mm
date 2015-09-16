@@ -27,6 +27,7 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import <Growthbeat/GrowthPush.h>
 
 @implementation AppController
 
@@ -128,6 +129,11 @@ static AppDelegate s_sharedApplication;
      See also applicationDidEnterBackground:.
      */
 }
+
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[GrowthPush sharedInstance] setDeviceToken:deviceToken];
+}
+
 
 
 #pragma mark -

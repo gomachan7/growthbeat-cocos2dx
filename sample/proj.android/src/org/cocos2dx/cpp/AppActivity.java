@@ -26,7 +26,18 @@ THE SOFTWARE.
  ****************************************************************************/
 package org.cocos2dx.cpp;
 
-import com.growthbeat.GrowthbeatCocos2dActivity;
+import org.cocos2dx.lib.Cocos2dxActivity;
 
-public class AppActivity extends GrowthbeatCocos2dActivity {
+import android.os.Bundle;
+
+import com.growthbeat.GrowthbeatJNI;
+
+public class AppActivity extends Cocos2dxActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		GrowthbeatJNI.setContext(this);
+	}
+
 }
