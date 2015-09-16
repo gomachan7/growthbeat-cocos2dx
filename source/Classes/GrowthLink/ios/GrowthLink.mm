@@ -6,7 +6,9 @@
 //
 //
 
-#if defined(CC_TARGET_OS_IPHONE)
+#include "ccConfig.h"
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+
 
 #include "GrowthLink.h"
 #include "GrowthLinkCCInternal.h"

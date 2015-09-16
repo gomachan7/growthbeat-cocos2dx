@@ -5,6 +5,8 @@
 //  Created by TABATAKATSUTOSHI on 2015/09/15.
 //
 //
+#include "ccConfig.h"
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #include "GrowthLinkPlugin.h"
 #import <GrowthLink/GrowthLink.h>
@@ -66,3 +68,5 @@ static void exchangeMethodImplementations(Class class, SEL oldMethod, SEL newMet
 
 
 @end
+
+#endif
