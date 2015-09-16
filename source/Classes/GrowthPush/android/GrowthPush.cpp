@@ -60,7 +60,7 @@ void GrowthPush::registerDeviceToken(GPEnvironment environment) {
 void GrowthPush::registerDeviceToken(const std::string& senderId, GPEnvironment environment) {
     JniMethodInfo t;
 
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;IZ)V")) {
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;I)V")) {
         jstring jSenderId = t.env->NewStringUTF(senderId.c_str());
         t.env->CallStaticVoidMethod(t.classID, t.methodID, jSenderId, environment);
         t.env->DeleteLocalRef(jSenderId);
