@@ -57,6 +57,11 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
+		6911F1DF1BA984AD0013AD0B /* GrowthLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6911F1D51BA984AD0013AD0B /* GrowthLink.cpp */; };
+		6911F1E01BA984AD0013AD0B /* GrowthLinkInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6911F1D81BA984AD0013AD0B /* GrowthLinkInstance.cpp */; };
+		6911F1E11BA984AD0013AD0B /* GrowthLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6911F1DA1BA984AD0013AD0B /* GrowthLink.mm */; };
+		6911F1E21BA984AD0013AD0B /* GrowthLinkCCinternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6911F1DC1BA984AD0013AD0B /* GrowthLinkCCinternal.m */; };
+		6911F1E31BA984AD0013AD0B /* GrowthLinkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6911F1DE1BA984AD0013AD0B /* GrowthLinkPlugin.m */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -171,6 +176,15 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		6911F1D51BA984AD0013AD0B /* GrowthLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthLink.cpp; sourceTree = "<group>"; };
+		6911F1D61BA984AD0013AD0B /* GLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMacros.h; sourceTree = "<group>"; };
+		6911F1D71BA984AD0013AD0B /* GrowthLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLink.h; sourceTree = "<group>"; };
+		6911F1D81BA984AD0013AD0B /* GrowthLinkInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthLinkInstance.cpp; sourceTree = "<group>"; };
+		6911F1DA1BA984AD0013AD0B /* GrowthLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthLink.mm; sourceTree = "<group>"; };
+		6911F1DB1BA984AD0013AD0B /* GrowthLinkCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLinkCCInternal.h; sourceTree = "<group>"; };
+		6911F1DC1BA984AD0013AD0B /* GrowthLinkCCinternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthLinkCCinternal.m; sourceTree = "<group>"; };
+		6911F1DD1BA984AD0013AD0B /* GrowthLinkPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLinkPlugin.h; sourceTree = "<group>"; };
+		6911F1DE1BA984AD0013AD0B /* GrowthLinkPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthLinkPlugin.m; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -359,6 +373,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6911F1D31BA984AD0013AD0B /* GrowthLink */,
 				C182B3CD1B9D64B600AEAFB4 /* GrowthAnalytics */,
 				C182B3D91B9D64B600AEAFB4 /* Growthbeat */,
 				C182B3E41B9D64B600AEAFB4 /* GrowthMessage */,
@@ -418,6 +433,39 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		6911F1D31BA984AD0013AD0B /* GrowthLink */ = {
+			isa = PBXGroup;
+			children = (
+				6911F1D41BA984AD0013AD0B /* android */,
+				6911F1D61BA984AD0013AD0B /* GLMacros.h */,
+				6911F1D71BA984AD0013AD0B /* GrowthLink.h */,
+				6911F1D81BA984AD0013AD0B /* GrowthLinkInstance.cpp */,
+				6911F1D91BA984AD0013AD0B /* ios */,
+			);
+			name = GrowthLink;
+			path = ../../source/Classes/GrowthLink;
+			sourceTree = "<group>";
+		};
+		6911F1D41BA984AD0013AD0B /* android */ = {
+			isa = PBXGroup;
+			children = (
+				6911F1D51BA984AD0013AD0B /* GrowthLink.cpp */,
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
+		6911F1D91BA984AD0013AD0B /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				6911F1DA1BA984AD0013AD0B /* GrowthLink.mm */,
+				6911F1DB1BA984AD0013AD0B /* GrowthLinkCCInternal.h */,
+				6911F1DC1BA984AD0013AD0B /* GrowthLinkCCinternal.m */,
+				6911F1DD1BA984AD0013AD0B /* GrowthLinkPlugin.h */,
+				6911F1DE1BA984AD0013AD0B /* GrowthLinkPlugin.m */,
+			);
+			path = ios;
+			sourceTree = "<group>";
 		};
 		C182B3CD1B9D64B600AEAFB4 /* GrowthAnalytics */ = {
 			isa = PBXGroup;
@@ -701,9 +749,14 @@
 				C182B4061B9D64B600AEAFB4 /* GrowthMessage.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				6911F1E31BA984AD0013AD0B /* GrowthLinkPlugin.m in Sources */,
+				6911F1E21BA984AD0013AD0B /* GrowthLinkCCinternal.m in Sources */,
 				C182B4041B9D64B600AEAFB4 /* Growthbeat.mm in Sources */,
 				C182B4001B9D64B600AEAFB4 /* GrowthAnalytics.mm in Sources */,
+				6911F1E01BA984AD0013AD0B /* GrowthLinkInstance.cpp in Sources */,
+				6911F1E11BA984AD0013AD0B /* GrowthLink.mm in Sources */,
 				C182B4091B9D64B600AEAFB4 /* GrowthPush.cpp in Sources */,
+				6911F1DF1BA984AD0013AD0B /* GrowthLink.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				C182B3FE1B9D64B600AEAFB4 /* GrowthAnalytics.cpp in Sources */,
 				C182B4051B9D64B600AEAFB4 /* GrowthbeatCCInternal.m in Sources */,
@@ -746,6 +799,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../submodules/growthbeat-ios",
+					"$(SRCROOT)/../../submodules/growthbeat-ios/source/GrowthLink/",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -786,6 +840,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../submodules/growthbeat-ios",
+					"$(SRCROOT)/../../submodules/growthbeat-ios/source/GrowthLink/",
 				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
