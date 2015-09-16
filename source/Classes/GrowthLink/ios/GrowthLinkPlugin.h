@@ -1,6 +1,6 @@
 //
 //  GrowthLinkPlugin.h
-//  GrowthbeatCocos2dxSample
+//  growthbeat-cocos2dx
 //
 //  Created by TABATAKATSUTOSHI on 2015/09/15.
 //

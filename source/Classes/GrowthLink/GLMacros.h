@@ -1,6 +1,6 @@
 //
 //  GLMacros.h
-//  HelloCocos
+//  growthbeat-cocos2dx
 //
 //  Created by TABATAKATSUTOSHI on 2015/09/07.
 //

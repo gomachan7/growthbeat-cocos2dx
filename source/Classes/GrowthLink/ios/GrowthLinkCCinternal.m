@@ -1,6 +1,6 @@
 //
-//  GrowthLinkCCInternal.h
-//  HelloCocos
+//  GrowthLinkCCInternal.m
+//  growthbeat-cocos2dx
 //
 //  Created by TABATAKATSUTOSHI on 2015/09/07.
 //
