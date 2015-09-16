@@ -14,11 +14,12 @@ public class GrowthLinkJNI {
 	}
 	
 	public static void initialize(String applicationId, String credentialId){
+		if (context == null)
+			throw new IllegalStateException("Must be setContext.");
 		GrowthLink.getInstance().initialize(GrowthLinkJNI.context, applicationId, credentialId);
 	}
 	
 	public static void handleOpenUrl(Uri uri){
 		GrowthLink.getInstance().handleOpenUrl(uri);
 	}
-
 }

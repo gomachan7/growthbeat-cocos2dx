@@ -4,10 +4,12 @@
 #include "Growthbeat.h"
 #include "GrowthPush.h"
 #include "GrowthAnalytics.h"
+#include "GrowthLink.h"
 
 USING_NS_CC;
 USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;
+USING_NS_GROWTHLINK;
 USING_NS_GROWTHANALYTICS;
 
 #ifdef DEBUG
@@ -67,6 +69,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // Growthbeat initializing.
     Growthbeat::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
+    GrowthLink::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
     GrowthPush::getInstance()->requestDeviceToken("YOUR_SENDER_ID", kGPEnvironment);
     Growthbeat::getInstance()->start();
 
