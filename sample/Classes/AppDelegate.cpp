@@ -10,7 +10,7 @@ USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;
 USING_NS_GROWTHANALYTICS;
 
-#ifdef DEBUG
+#ifdef COCOS2D_DEBUG
 GPEnvironment kGPEnvironment = GPEnvironmentDevelopment;
 #else
 GPEnvironment kGPEnvironment = GPEnvironmentProduction;
@@ -66,8 +66,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->runWithScene(scene);
     
     // Growthbeat initializing.
-    Growthbeat::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
-    GrowthPush::getInstance()->requestDeviceToken("YOUR_SENDER_ID", kGPEnvironment);
+    Growthbeat::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
+    GrowthPush::getInstance()->requestDeviceToken("1000565500410", kGPEnvironment);
     Growthbeat::getInstance()->start();
 
     return true;
