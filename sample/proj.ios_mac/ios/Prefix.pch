@@ -9,7 +9,4 @@
 
 #ifdef __cplusplus
 	#include "cocos2d.h"
-    #include "Growthbeat.h"
-    #include "GrowthPush.h"
-    #include "GrowthAnalytics.h"
 #endif
