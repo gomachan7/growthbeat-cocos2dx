@@ -24,10 +24,27 @@ cd ../../ ; open sample/proj.ios_mac/GrowthbeatCocos2dxSample.xcodeproj
 
 ### iOS
 
+[1] Copy frameworks.
+
 1. Copy Classes/Growthbeat, Classes/GrowthPush and Classes/GrowthAnalytics to /path/to/your_project/Classes/ 
 1. Copy Growthbeat.framework to /path/to/your_project/proj.ios/Frameworks/
 1. Added Classes in folder and framework to Xcode project.
 1. Add dependecy frameworks. Foundation.framework, Security.framework, SystemConfiguration.framework, AdSupport.framework, CFNetwork.framework and libiconv.2.4.0.dylib.
+
+[2] Write Delegate to AppControler.mm
+
+```
+#import <"Growthbeat/GrowthPush.h">
+
+add delegate - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+
+//...summary...
+
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[GrowthPush sharedInstance] setDeviceToken:deviceToken];
+}
+
+```
 
 ### Android
 
@@ -165,7 +182,7 @@ USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;
 USING_NS_GROWTHANALYTICS;
 
-#ifdef DEBUG
+#ifdef COCOS2D_DEBUG
 GPEnvironment kGPEnvironment = GPEnvironmentDevelopment;
 #else
 GPEnvironment kGPEnvironment = GPEnvironmentProduction;
