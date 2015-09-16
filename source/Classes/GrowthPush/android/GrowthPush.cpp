@@ -53,11 +53,11 @@ JNIEXPORT void JNICALL Java_com_growthpush_cocos2dx_Cocos2dxBridge_didOpenRemote
 GrowthPush::GrowthPush(void)
 {}
 
-void GrowthPush::registerDeviceToken(GPEnvironment environment) {
+void GrowthPush::requestDeviceToken(GPEnvironment environment) {
     // Do nothing on Android
 }
 
-void GrowthPush::registerDeviceToken(const std::string& senderId, GPEnvironment environment) {
+void GrowthPush::requestDeviceToken(const std::string& senderId, GPEnvironment environment) {
     JniMethodInfo t;
 
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;I)V")) {
