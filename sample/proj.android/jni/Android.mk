@@ -18,7 +18,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/GrowthPush/GrowthPushInstance.cpp \
                    ../../Classes/GrowthPush/android/GrowthPush.cpp \
                    ../../Classes/GrowthAnalytics/GrowthAnalyticsInstance.cpp \
-                   ../../Classes/GrowthAnalytics/android/GrowthAnalytics.cpp
+                   ../../Classes/GrowthAnalytics/android/GrowthAnalytics.cpp \
+                   ../../Classes/GrowthbeatCore/GrowthbeatCoreInstance.cpp \
+                   ../../Classes/GrowthbeatCore/android/GrowthbeatCore.cpp \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../Classes/Growthbeat/ \
@@ -27,6 +29,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../Classes/GrowthPush/android \
 					$(LOCAL_PATH)/../../Classes/GrowthAnalytics/ \
 					$(LOCAL_PATH)/../../Classes/GrowthAnalytics/android \
+					$(LOCAL_PATH)/../../Classes/GrowthbeatCore/ \
+					$(LOCAL_PATH)/../../Classes/GrowthbeatCore/android \
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
