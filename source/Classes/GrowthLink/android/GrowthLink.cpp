@@ -20,7 +20,7 @@
 USING_NS_CC;
 USING_NS_GROWTHLINK;
 
-static const char *const JavaClassName = "com/growthlink/GrowthLinkJNI";
+static const char *const JavaClassName = "com/growthbeat/link/GrowthLinkJNI";
 
 growthlink::GrowthLink::GrowthLink() {}
 
