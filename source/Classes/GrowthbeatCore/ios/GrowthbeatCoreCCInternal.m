@@ -36,13 +36,6 @@
     [GrowthbeatCore sharedInstance].intentHandlers = mutableArray;
 }
 
-+ (void)test{
-    GBCustomIntent *customIntent = [[GBCustomIntent alloc] init];
-    customIntent.type = GBIntentTypeCustom;
-    customIntent.extra = [[NSDictionary alloc] initWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
-     NSMutableArray *mutableArray =[[GrowthbeatCore sharedInstance].intentHandlers mutableCopy];
-    BOOL handled = [[GrowthbeatCore sharedInstance] handleIntent:customIntent];
-}
 
 @end
 

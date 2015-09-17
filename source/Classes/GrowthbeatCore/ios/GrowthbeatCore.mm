@@ -41,9 +41,6 @@ void growthbeatcore::GrowthbeatCore::addCustomIntentHandler(const OnHandle& hand
 
 }
 
-void growthbeatcore::GrowthbeatCore::test(){
-    [GrowthbeatCoreCCInternal test];
-}
 
 
 #endif

@@ -25,7 +25,6 @@
 
 + (void)addCustomIntentHandlerWithBlock:(BOOL(^)(GBCustomIntent *customIntent))block;
 
-+ (void)test;
 
 @end
 

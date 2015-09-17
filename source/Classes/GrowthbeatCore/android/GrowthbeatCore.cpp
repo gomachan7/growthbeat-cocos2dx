@@ -89,13 +89,4 @@ void GrowthbeatCore::addCustomIntentHandler(const OnHandle& handle){
     s_selector = handle;
 }
 
-void GrowthbeatCore::test(){
-    JniMethodInfo t;
-    
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "test", "()V")) {
-        t.env->CallStaticVoidMethod(t.classID, t.methodID);
-        t.env->DeleteLocalRef(t.classID);
-    }
-}
-
 #endif

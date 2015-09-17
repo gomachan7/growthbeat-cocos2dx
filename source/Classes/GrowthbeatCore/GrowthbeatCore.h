@@ -25,7 +25,6 @@ public:
     void addNoopIntentHandler();
     void addUrlIntentHandler();
     void addCustomIntentHandler(const OnHandle& handle);
-    void test();
     
 private:
     OnHandle _handle;
