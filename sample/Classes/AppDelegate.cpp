@@ -71,7 +71,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     Growthbeat::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
     GrowthLink::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
     GrowthPush::getInstance()->requestDeviceToken("1000565500410", kGPEnvironment);
-//    Growthbeat::getInstance()->start();
+    Growthbeat::getInstance()->start();
 
     return true;
 }
@@ -94,5 +94,5 @@ void AppDelegate::applicationWillEnterForeground() {
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
     
 
-//    Growthbeat::getInstance()->start();
+    Growthbeat::getInstance()->start();
 }
