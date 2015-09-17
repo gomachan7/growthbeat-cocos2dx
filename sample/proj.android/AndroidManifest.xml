@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.growthbeat.growthbeatsample"
+    package="com.growthbeat.GrowthbeatSample"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -33,7 +33,6 @@
         <activity
             android:name="com.growthbeat.message.view.MessageActivity"
             android:theme="@android:style/Theme.Translucent" />
-        
         <activity
             android:name="com.growthpush.view.AlertActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -47,17 +46,10 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <category android:name="com.growthbeat.growthbeatsample" />
+                <category android:name="com.growthbeat.GrowthbeatSample" />
             </intent-filter>
         </receiver>
-        <!-- <receiver
-            android:name="com.growthbeat.link.InstallReferrerReceiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER" />
-            </intent-filter>
-        </receiver> -->
+        
     </application>
 
     <supports-screens
@@ -67,6 +59,7 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
+    
     <uses-permission android:name="android.permission.INTERNET" />
     
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -75,9 +68,9 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <permission
-        android:name="com.growthbeat.growthbeatsample.permission.C2D_MESSAGE"
+        android:name="com.growthbeat.GrowthbeatSample.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.growthbeat.growthbeatsample.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.growthbeat.GrowthbeatSample.permission.C2D_MESSAGE" />
 
 </manifest>

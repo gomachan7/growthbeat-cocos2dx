@@ -7,34 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
 		46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
-		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
-		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
-		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
-		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
-		5087E76817EB910900C73F5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		5087E76917EB910900C73F5D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
-		5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
-		5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77217EB970100C73F5D /* Default-568h@2x.png */; };
 		5087E77E17EB970100C73F5D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77317EB970100C73F5D /* Default.png */; };
 		5087E77F17EB970100C73F5D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77417EB970100C73F5D /* Default@2x.png */; };
@@ -45,8 +30,6 @@
 		5087E78417EB970100C73F5D /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77917EB970100C73F5D /* Icon-57.png */; };
 		5087E78517EB970100C73F5D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77A17EB970100C73F5D /* Icon-72.png */; };
 		5087E78617EB970100C73F5D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77B17EB970100C73F5D /* Icon-76.png */; };
-		5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78817EB974C00C73F5D /* AppKit.framework */; };
-		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
 		50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629217ECD46A001EB2F8 /* Icon-40.png */; };
 		50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629317ECD46A001EB2F8 /* Icon-58.png */; };
 		50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629417ECD46A001EB2F8 /* Icon-80.png */; };
@@ -56,33 +39,28 @@
 		521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6219F0C34300D177D7 /* Default-667h@2x.png */; };
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		C182B3FE1B9D64B600AEAFB4 /* GrowthAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3CF1B9D64B600AEAFB4 /* GrowthAnalytics.cpp */; };
-		C182B3FF1B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3D41B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp */; };
-		C182B4001B9D64B600AEAFB4 /* GrowthAnalytics.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3D61B9D64B600AEAFB4 /* GrowthAnalytics.mm */; };
-		C182B4011B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3D81B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m */; };
-		C182B4021B9D64B600AEAFB4 /* Growthbeat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3DB1B9D64B600AEAFB4 /* Growthbeat.cpp */; };
-		C182B4031B9D64B600AEAFB4 /* GrowthbeatInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3DF1B9D64B600AEAFB4 /* GrowthbeatInstance.cpp */; };
-		C182B4041B9D64B600AEAFB4 /* Growthbeat.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3E11B9D64B600AEAFB4 /* Growthbeat.mm */; };
-		C182B4051B9D64B600AEAFB4 /* GrowthbeatCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3E31B9D64B600AEAFB4 /* GrowthbeatCCInternal.m */; };
-		C182B4061B9D64B600AEAFB4 /* GrowthMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3E61B9D64B600AEAFB4 /* GrowthMessage.cpp */; };
-		C182B4071B9D64B600AEAFB4 /* GrowthMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3EA1B9D64B600AEAFB4 /* GrowthMessage.mm */; };
-		C182B4081B9D64B600AEAFB4 /* GrowthMessageCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3EC1B9D64B600AEAFB4 /* GrowthMessageCCInternal.m */; };
-		C182B4091B9D64B600AEAFB4 /* GrowthPush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3EF1B9D64B600AEAFB4 /* GrowthPush.cpp */; };
-		C182B40A1B9D64B600AEAFB4 /* GrowthPushInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F31B9D64B600AEAFB4 /* GrowthPushInstance.cpp */; };
-		C182B40C1B9D64B600AEAFB4 /* GrowthPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */; };
-		C182B40D1B9D64B600AEAFB4 /* GrowthPushCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */; };
-		C182B4111B9D67BB00AEAFB4 /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */; };
-		C182B4141B9D978800AEAFB4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4131B9D978800AEAFB4 /* AdSupport.framework */; };
-		C182B4161B9D979D00AEAFB4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */; };
-		C182B4181B9D97D800AEAFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4171B9D97D800AEAFB4 /* Security.framework */; };
-		C182B41A1B9D982300AEAFB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B4191B9D982300AEAFB4 /* UIKit.framework */; };
-		C182B41C1B9D985900AEAFB4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */; };
-		C182B41F1B9D98FE00AEAFB4 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */; };
+		C1160CFC1BA9D487008A35DC /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFB1BA9D487008A35DC /* Growthbeat.framework */; };
+		C1160CFE1BA9D48F008A35DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */; };
+		C1160D001BA9D494008A35DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFF1BA9D494008A35DC /* Security.framework */; };
+		C1160D021BA9D49A008A35DC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160D011BA9D49A008A35DC /* AdSupport.framework */; };
+		C1160D271BA9D5B1008A35DC /* GrowthAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D071BA9D5B1008A35DC /* GrowthAnalytics.cpp */; };
+		C1160D281BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D0C1BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp */; };
+		C1160D291BA9D5B1008A35DC /* GrowthAnalytics.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1160D0E1BA9D5B1008A35DC /* GrowthAnalytics.mm */; };
+		C1160D2A1BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C1160D101BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m */; };
+		C1160D2B1BA9D5B1008A35DC /* Growthbeat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D131BA9D5B1008A35DC /* Growthbeat.cpp */; };
+		C1160D2C1BA9D5B1008A35DC /* GrowthbeatInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D171BA9D5B1008A35DC /* GrowthbeatInstance.cpp */; };
+		C1160D2D1BA9D5B1008A35DC /* Growthbeat.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1160D191BA9D5B1008A35DC /* Growthbeat.mm */; };
+		C1160D2E1BA9D5B1008A35DC /* GrowthbeatCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C1160D1B1BA9D5B1008A35DC /* GrowthbeatCCInternal.m */; };
+		C1160D2F1BA9D5B1008A35DC /* GrowthPush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D1E1BA9D5B1008A35DC /* GrowthPush.cpp */; };
+		C1160D301BA9D5B1008A35DC /* GrowthPushInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1160D221BA9D5B1008A35DC /* GrowthPushInstance.cpp */; };
+		C1160D311BA9D5B1008A35DC /* GrowthPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1160D241BA9D5B1008A35DC /* GrowthPush.mm */; };
+		C1160D321BA9D5B1008A35DC /* GrowthPushCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C1160D261BA9D5B1008A35DC /* GrowthPushCCInternal.m */; };
+		C1160D341BA9D7C8008A35DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160D331BA9D7C8008A35DC /* CFNetwork.framework */; };
+		C13D876C1BA9E4F7005A35CD /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -104,13 +82,6 @@
 			remoteGlobalIDString = A07A4D641783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
 		};
-		1AC6FB15180E9959004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
-			remoteInfo = "cocos2dx Mac";
-		};
 		1AC6FB24180E99E1004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
@@ -124,7 +95,7 @@
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* GrowthbeatCocos2dxSample iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrowthbeatCocos2dxSample iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* GrowthbeatSample iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrowthbeatSample iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
@@ -147,7 +118,6 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* GrowthbeatCocos2dxSample Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrowthbeatCocos2dxSample Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -175,44 +145,38 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C182B3CF1B9D64B600AEAFB4 /* GrowthAnalytics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthAnalytics.cpp; sourceTree = "<group>"; };
-		C182B3D01B9D64B600AEAFB4 /* GAGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGender.h; sourceTree = "<group>"; };
-		C182B3D11B9D64B600AEAFB4 /* GAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAMacros.h; sourceTree = "<group>"; };
-		C182B3D21B9D64B600AEAFB4 /* GATrackOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATrackOption.h; sourceTree = "<group>"; };
-		C182B3D31B9D64B600AEAFB4 /* GrowthAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthAnalytics.h; sourceTree = "<group>"; };
-		C182B3D41B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthAnalyticsInstance.cpp; sourceTree = "<group>"; };
-		C182B3D61B9D64B600AEAFB4 /* GrowthAnalytics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthAnalytics.mm; sourceTree = "<group>"; };
-		C182B3D71B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthAnalyticsCCInternal.h; sourceTree = "<group>"; };
-		C182B3D81B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthAnalyticsCCInternal.m; sourceTree = "<group>"; };
-		C182B3DB1B9D64B600AEAFB4 /* Growthbeat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Growthbeat.cpp; sourceTree = "<group>"; };
-		C182B3DC1B9D64B600AEAFB4 /* GbJsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GbJsonHelper.h; sourceTree = "<group>"; };
-		C182B3DD1B9D64B600AEAFB4 /* GbMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GbMacros.h; sourceTree = "<group>"; };
-		C182B3DE1B9D64B600AEAFB4 /* Growthbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growthbeat.h; sourceTree = "<group>"; };
-		C182B3DF1B9D64B600AEAFB4 /* GrowthbeatInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthbeatInstance.cpp; sourceTree = "<group>"; };
-		C182B3E11B9D64B600AEAFB4 /* Growthbeat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Growthbeat.mm; sourceTree = "<group>"; };
-		C182B3E21B9D64B600AEAFB4 /* GrowthbeatCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthbeatCCInternal.h; sourceTree = "<group>"; };
-		C182B3E31B9D64B600AEAFB4 /* GrowthbeatCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthbeatCCInternal.m; sourceTree = "<group>"; };
-		C182B3E61B9D64B600AEAFB4 /* GrowthMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthMessage.cpp; sourceTree = "<group>"; };
-		C182B3E71B9D64B600AEAFB4 /* GMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMacros.h; sourceTree = "<group>"; };
-		C182B3E81B9D64B600AEAFB4 /* GrowthMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthMessage.h; sourceTree = "<group>"; };
-		C182B3EA1B9D64B600AEAFB4 /* GrowthMessage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthMessage.mm; sourceTree = "<group>"; };
-		C182B3EB1B9D64B600AEAFB4 /* GrowthMessageCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthMessageCCInternal.h; sourceTree = "<group>"; };
-		C182B3EC1B9D64B600AEAFB4 /* GrowthMessageCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthMessageCCInternal.m; sourceTree = "<group>"; };
-		C182B3EF1B9D64B600AEAFB4 /* GrowthPush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPush.cpp; sourceTree = "<group>"; };
-		C182B3F01B9D64B600AEAFB4 /* GPEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEnvironment.h; sourceTree = "<group>"; };
-		C182B3F11B9D64B600AEAFB4 /* GPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMacros.h; sourceTree = "<group>"; };
-		C182B3F21B9D64B600AEAFB4 /* GrowthPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPush.h; sourceTree = "<group>"; };
-		C182B3F31B9D64B600AEAFB4 /* GrowthPushInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPushInstance.cpp; sourceTree = "<group>"; };
-		C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthPush.mm; sourceTree = "<group>"; };
-		C182B3FA1B9D64B600AEAFB4 /* GrowthPushCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPushCCInternal.h; sourceTree = "<group>"; };
-		C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthPushCCInternal.m; sourceTree = "<group>"; };
-		C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
-		C182B4131B9D978800AEAFB4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
-		C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		C182B4171B9D97D800AEAFB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		C182B4191B9D982300AEAFB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.2.4.0.dylib; sourceTree = DEVELOPER_DIR; };
+		C1160CFB1BA9D487008A35DC /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
+		C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		C1160CFF1BA9D494008A35DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		C1160D011BA9D49A008A35DC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		C1160D031BA9D4A7008A35DC /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libiconv.2.4.0.tbd; sourceTree = DEVELOPER_DIR; };
+		C1160D071BA9D5B1008A35DC /* GrowthAnalytics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthAnalytics.cpp; sourceTree = "<group>"; };
+		C1160D081BA9D5B1008A35DC /* GAGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGender.h; sourceTree = "<group>"; };
+		C1160D091BA9D5B1008A35DC /* GAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAMacros.h; sourceTree = "<group>"; };
+		C1160D0A1BA9D5B1008A35DC /* GATrackOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATrackOption.h; sourceTree = "<group>"; };
+		C1160D0B1BA9D5B1008A35DC /* GrowthAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthAnalytics.h; sourceTree = "<group>"; };
+		C1160D0C1BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthAnalyticsInstance.cpp; sourceTree = "<group>"; };
+		C1160D0E1BA9D5B1008A35DC /* GrowthAnalytics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthAnalytics.mm; sourceTree = "<group>"; };
+		C1160D0F1BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthAnalyticsCCInternal.h; sourceTree = "<group>"; };
+		C1160D101BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthAnalyticsCCInternal.m; sourceTree = "<group>"; };
+		C1160D131BA9D5B1008A35DC /* Growthbeat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Growthbeat.cpp; sourceTree = "<group>"; };
+		C1160D141BA9D5B1008A35DC /* GbJsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GbJsonHelper.h; sourceTree = "<group>"; };
+		C1160D151BA9D5B1008A35DC /* GbMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GbMacros.h; sourceTree = "<group>"; };
+		C1160D161BA9D5B1008A35DC /* Growthbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growthbeat.h; sourceTree = "<group>"; };
+		C1160D171BA9D5B1008A35DC /* GrowthbeatInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthbeatInstance.cpp; sourceTree = "<group>"; };
+		C1160D191BA9D5B1008A35DC /* Growthbeat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Growthbeat.mm; sourceTree = "<group>"; };
+		C1160D1A1BA9D5B1008A35DC /* GrowthbeatCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthbeatCCInternal.h; sourceTree = "<group>"; };
+		C1160D1B1BA9D5B1008A35DC /* GrowthbeatCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthbeatCCInternal.m; sourceTree = "<group>"; };
+		C1160D1E1BA9D5B1008A35DC /* GrowthPush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPush.cpp; sourceTree = "<group>"; };
+		C1160D1F1BA9D5B1008A35DC /* GPEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEnvironment.h; sourceTree = "<group>"; };
+		C1160D201BA9D5B1008A35DC /* GPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMacros.h; sourceTree = "<group>"; };
+		C1160D211BA9D5B1008A35DC /* GrowthPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPush.h; sourceTree = "<group>"; };
+		C1160D221BA9D5B1008A35DC /* GrowthPushInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPushInstance.cpp; sourceTree = "<group>"; };
+		C1160D241BA9D5B1008A35DC /* GrowthPush.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthPush.mm; sourceTree = "<group>"; };
+		C1160D251BA9D5B1008A35DC /* GrowthPushCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPushCCInternal.h; sourceTree = "<group>"; };
+		C1160D261BA9D5B1008A35DC /* GrowthPushCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthPushCCInternal.m; sourceTree = "<group>"; };
+		C1160D331BA9D7C8008A35DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.2.4.0.dylib; sourceTree = DEVELOPER_DIR; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -224,41 +188,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C182B41F1B9D98FE00AEAFB4 /* libiconv.2.4.0.dylib in Frameworks */,
-				C182B41C1B9D985900AEAFB4 /* SystemConfiguration.framework in Frameworks */,
-				C182B41A1B9D982300AEAFB4 /* UIKit.framework in Frameworks */,
-				C182B4181B9D97D800AEAFB4 /* Security.framework in Frameworks */,
-				C182B4161B9D979D00AEAFB4 /* CFNetwork.framework in Frameworks */,
-				C182B4141B9D978800AEAFB4 /* AdSupport.framework in Frameworks */,
+				C13D876C1BA9E4F7005A35CD /* libiconv.2.4.0.dylib in Frameworks */,
+				C1160D341BA9D7C8008A35DC /* CFNetwork.framework in Frameworks */,
+				C1160D021BA9D49A008A35DC /* AdSupport.framework in Frameworks */,
+				C1160D001BA9D494008A35DC /* Security.framework in Frameworks */,
+				C1160CFE1BA9D48F008A35DC /* SystemConfiguration.framework in Frameworks */,
+				C1160CFC1BA9D487008A35DC /* Growthbeat.framework in Frameworks */,
+				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
-				C182B4111B9D67BB00AEAFB4 /* Growthbeat.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5087E75C17EB910900C73F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
-				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
-				8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */,
-				503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */,
-				5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */,
-				5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */,
-				5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */,
-				5087E76817EB910900C73F5D /* QuartzCore.framework in Frameworks */,
-				5087E76917EB910900C73F5D /* OpenAL.framework in Frameworks */,
-				5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */,
-				5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +230,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* GrowthbeatCocos2dxSample iOS.app */,
-				5087E76F17EB910900C73F5D /* GrowthbeatCocos2dxSample Mac.app */,
+				1D6058910D05DD3D006BFB54 /* GrowthbeatSample iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,13 +261,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C182B41D1B9D98AC00AEAFB4 /* libiconv.2.4.0.dylib */,
-				C182B41B1B9D985900AEAFB4 /* SystemConfiguration.framework */,
-				C182B4191B9D982300AEAFB4 /* UIKit.framework */,
-				C182B4171B9D97D800AEAFB4 /* Security.framework */,
-				C182B4151B9D979D00AEAFB4 /* CFNetwork.framework */,
-				C182B4131B9D978800AEAFB4 /* AdSupport.framework */,
-				C182B4101B9D67BB00AEAFB4 /* Growthbeat.framework */,
+				C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */,
+				C1160D331BA9D7C8008A35DC /* CFNetwork.framework */,
+				C1160D031BA9D4A7008A35DC /* libiconv.2.4.0.tbd */,
+				C1160D011BA9D49A008A35DC /* AdSupport.framework */,
+				C1160CFF1BA9D494008A35DC /* Security.framework */,
+				C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */,
+				C1160CFB1BA9D487008A35DC /* Growthbeat.framework */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -359,10 +305,9 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3CD1B9D64B600AEAFB4 /* GrowthAnalytics */,
-				C182B3D91B9D64B600AEAFB4 /* Growthbeat */,
-				C182B3E41B9D64B600AEAFB4 /* GrowthMessage */,
-				C182B3ED1B9D64B600AEAFB4 /* GrowthPush */,
+				C1160D051BA9D5B1008A35DC /* GrowthAnalytics */,
+				C1160D111BA9D5B1008A35DC /* Growthbeat */,
+				C1160D1C1BA9D5B1008A35DC /* GrowthPush */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -419,125 +364,96 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
-		C182B3CD1B9D64B600AEAFB4 /* GrowthAnalytics */ = {
+		C1160D051BA9D5B1008A35DC /* GrowthAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3CE1B9D64B600AEAFB4 /* android */,
-				C182B3D01B9D64B600AEAFB4 /* GAGender.h */,
-				C182B3D11B9D64B600AEAFB4 /* GAMacros.h */,
-				C182B3D21B9D64B600AEAFB4 /* GATrackOption.h */,
-				C182B3D31B9D64B600AEAFB4 /* GrowthAnalytics.h */,
-				C182B3D41B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp */,
-				C182B3D51B9D64B600AEAFB4 /* ios */,
+				C1160D061BA9D5B1008A35DC /* android */,
+				C1160D081BA9D5B1008A35DC /* GAGender.h */,
+				C1160D091BA9D5B1008A35DC /* GAMacros.h */,
+				C1160D0A1BA9D5B1008A35DC /* GATrackOption.h */,
+				C1160D0B1BA9D5B1008A35DC /* GrowthAnalytics.h */,
+				C1160D0C1BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp */,
+				C1160D0D1BA9D5B1008A35DC /* ios */,
 			);
 			path = GrowthAnalytics;
 			sourceTree = "<group>";
 		};
-		C182B3CE1B9D64B600AEAFB4 /* android */ = {
+		C1160D061BA9D5B1008A35DC /* android */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3CF1B9D64B600AEAFB4 /* GrowthAnalytics.cpp */,
+				C1160D071BA9D5B1008A35DC /* GrowthAnalytics.cpp */,
 			);
 			path = android;
 			sourceTree = "<group>";
 		};
-		C182B3D51B9D64B600AEAFB4 /* ios */ = {
+		C1160D0D1BA9D5B1008A35DC /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3D61B9D64B600AEAFB4 /* GrowthAnalytics.mm */,
-				C182B3D71B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.h */,
-				C182B3D81B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m */,
+				C1160D0E1BA9D5B1008A35DC /* GrowthAnalytics.mm */,
+				C1160D0F1BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.h */,
+				C1160D101BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
 		};
-		C182B3D91B9D64B600AEAFB4 /* Growthbeat */ = {
+		C1160D111BA9D5B1008A35DC /* Growthbeat */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3DA1B9D64B600AEAFB4 /* android */,
-				C182B3DC1B9D64B600AEAFB4 /* GbJsonHelper.h */,
-				C182B3DD1B9D64B600AEAFB4 /* GbMacros.h */,
-				C182B3DE1B9D64B600AEAFB4 /* Growthbeat.h */,
-				C182B3DF1B9D64B600AEAFB4 /* GrowthbeatInstance.cpp */,
-				C182B3E01B9D64B600AEAFB4 /* ios */,
+				C1160D121BA9D5B1008A35DC /* android */,
+				C1160D141BA9D5B1008A35DC /* GbJsonHelper.h */,
+				C1160D151BA9D5B1008A35DC /* GbMacros.h */,
+				C1160D161BA9D5B1008A35DC /* Growthbeat.h */,
+				C1160D171BA9D5B1008A35DC /* GrowthbeatInstance.cpp */,
+				C1160D181BA9D5B1008A35DC /* ios */,
 			);
 			path = Growthbeat;
 			sourceTree = "<group>";
 		};
-		C182B3DA1B9D64B600AEAFB4 /* android */ = {
+		C1160D121BA9D5B1008A35DC /* android */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3DB1B9D64B600AEAFB4 /* Growthbeat.cpp */,
+				C1160D131BA9D5B1008A35DC /* Growthbeat.cpp */,
 			);
 			path = android;
 			sourceTree = "<group>";
 		};
-		C182B3E01B9D64B600AEAFB4 /* ios */ = {
+		C1160D181BA9D5B1008A35DC /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3E11B9D64B600AEAFB4 /* Growthbeat.mm */,
-				C182B3E31B9D64B600AEAFB4 /* GrowthbeatCCInternal.m */,
-				C182B3E21B9D64B600AEAFB4 /* GrowthbeatCCInternal.h */,
+				C1160D191BA9D5B1008A35DC /* Growthbeat.mm */,
+				C1160D1A1BA9D5B1008A35DC /* GrowthbeatCCInternal.h */,
+				C1160D1B1BA9D5B1008A35DC /* GrowthbeatCCInternal.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
 		};
-		C182B3E41B9D64B600AEAFB4 /* GrowthMessage */ = {
+		C1160D1C1BA9D5B1008A35DC /* GrowthPush */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3E51B9D64B600AEAFB4 /* android */,
-				C182B3E71B9D64B600AEAFB4 /* GMMacros.h */,
-				C182B3E81B9D64B600AEAFB4 /* GrowthMessage.h */,
-				C182B3E91B9D64B600AEAFB4 /* ios */,
-			);
-			path = GrowthMessage;
-			sourceTree = "<group>";
-		};
-		C182B3E51B9D64B600AEAFB4 /* android */ = {
-			isa = PBXGroup;
-			children = (
-				C182B3E61B9D64B600AEAFB4 /* GrowthMessage.cpp */,
-			);
-			path = android;
-			sourceTree = "<group>";
-		};
-		C182B3E91B9D64B600AEAFB4 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				C182B3EA1B9D64B600AEAFB4 /* GrowthMessage.mm */,
-				C182B3EB1B9D64B600AEAFB4 /* GrowthMessageCCInternal.h */,
-				C182B3EC1B9D64B600AEAFB4 /* GrowthMessageCCInternal.m */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		C182B3ED1B9D64B600AEAFB4 /* GrowthPush */ = {
-			isa = PBXGroup;
-			children = (
-				C182B3EE1B9D64B600AEAFB4 /* android */,
-				C182B3F01B9D64B600AEAFB4 /* GPEnvironment.h */,
-				C182B3F11B9D64B600AEAFB4 /* GPMacros.h */,
-				C182B3F21B9D64B600AEAFB4 /* GrowthPush.h */,
-				C182B3F31B9D64B600AEAFB4 /* GrowthPushInstance.cpp */,
-				C182B3F41B9D64B600AEAFB4 /* ios */,
+				C1160D1D1BA9D5B1008A35DC /* android */,
+				C1160D1F1BA9D5B1008A35DC /* GPEnvironment.h */,
+				C1160D201BA9D5B1008A35DC /* GPMacros.h */,
+				C1160D211BA9D5B1008A35DC /* GrowthPush.h */,
+				C1160D221BA9D5B1008A35DC /* GrowthPushInstance.cpp */,
+				C1160D231BA9D5B1008A35DC /* ios */,
 			);
 			path = GrowthPush;
 			sourceTree = "<group>";
 		};
-		C182B3EE1B9D64B600AEAFB4 /* android */ = {
+		C1160D1D1BA9D5B1008A35DC /* android */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3EF1B9D64B600AEAFB4 /* GrowthPush.cpp */,
+				C1160D1E1BA9D5B1008A35DC /* GrowthPush.cpp */,
 			);
 			path = android;
 			sourceTree = "<group>";
 		};
-		C182B3F41B9D64B600AEAFB4 /* ios */ = {
+		C1160D231BA9D5B1008A35DC /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				C182B3F91B9D64B600AEAFB4 /* GrowthPush.mm */,
-				C182B3FA1B9D64B600AEAFB4 /* GrowthPushCCInternal.h */,
-				C182B3FB1B9D64B600AEAFB4 /* GrowthPushCCInternal.m */,
+				C1160D241BA9D5B1008A35DC /* GrowthPush.mm */,
+				C1160D251BA9D5B1008A35DC /* GrowthPushCCInternal.h */,
+				C1160D261BA9D5B1008A35DC /* GrowthPushCCInternal.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -545,9 +461,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* GrowthbeatCocos2dxSample iOS */ = {
+		1D6058900D05DD3D006BFB54 /* GrowthbeatSample iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GrowthbeatCocos2dxSample iOS" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GrowthbeatSample iOS" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -558,27 +474,9 @@
 			dependencies = (
 				1AC6FB25180E99E1004C840B /* PBXTargetDependency */,
 			);
-			name = "GrowthbeatCocos2dxSample iOS";
+			name = "GrowthbeatSample iOS";
 			productName = iphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* GrowthbeatCocos2dxSample iOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		5087E73D17EB910900C73F5D /* GrowthbeatCocos2dxSample Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "GrowthbeatCocos2dxSample Mac" */;
-			buildPhases = (
-				5087E74817EB910900C73F5D /* Resources */,
-				5087E75617EB910900C73F5D /* Sources */,
-				5087E75C17EB910900C73F5D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1AC6FB16180E9959004C840B /* PBXTargetDependency */,
-			);
-			name = "GrowthbeatCocos2dxSample Mac";
-			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* GrowthbeatCocos2dxSample Mac.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* GrowthbeatSample iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -590,11 +488,11 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = KXJAKTLCBX;
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrowthbeatCocos2dxSample" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrowthbeatSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -614,8 +512,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* GrowthbeatCocos2dxSample iOS */,
-				5087E73D17EB910900C73F5D /* GrowthbeatCocos2dxSample Mac */,
+				1D6058900D05DD3D006BFB54 /* GrowthbeatSample iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -668,19 +565,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5087E74817EB910900C73F5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
-				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				3EACC99019EE6D4300EB3C5E /* res in Resources */,
-				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
-				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
-				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -688,47 +572,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C182B4011B9D64B600AEAFB4 /* GrowthAnalyticsCCInternal.m in Sources */,
-				C182B3FF1B9D64B600AEAFB4 /* GrowthAnalyticsInstance.cpp in Sources */,
-				C182B4071B9D64B600AEAFB4 /* GrowthMessage.mm in Sources */,
-				C182B4021B9D64B600AEAFB4 /* Growthbeat.cpp in Sources */,
-				C182B40D1B9D64B600AEAFB4 /* GrowthPushCCInternal.m in Sources */,
+				C1160D311BA9D5B1008A35DC /* GrowthPush.mm in Sources */,
+				C1160D2A1BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m in Sources */,
+				C1160D281BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp in Sources */,
+				C1160D2B1BA9D5B1008A35DC /* Growthbeat.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				C182B4031B9D64B600AEAFB4 /* GrowthbeatInstance.cpp in Sources */,
+				C1160D2C1BA9D5B1008A35DC /* GrowthbeatInstance.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				C182B40C1B9D64B600AEAFB4 /* GrowthPush.mm in Sources */,
-				C182B4081B9D64B600AEAFB4 /* GrowthMessageCCInternal.m in Sources */,
-				C182B4061B9D64B600AEAFB4 /* GrowthMessage.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				C182B4041B9D64B600AEAFB4 /* Growthbeat.mm in Sources */,
-				C182B4001B9D64B600AEAFB4 /* GrowthAnalytics.mm in Sources */,
-				C182B4091B9D64B600AEAFB4 /* GrowthPush.cpp in Sources */,
+				C1160D301BA9D5B1008A35DC /* GrowthPushInstance.cpp in Sources */,
+				C1160D321BA9D5B1008A35DC /* GrowthPushCCInternal.m in Sources */,
+				C1160D2D1BA9D5B1008A35DC /* Growthbeat.mm in Sources */,
+				C1160D291BA9D5B1008A35DC /* GrowthAnalytics.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				C182B3FE1B9D64B600AEAFB4 /* GrowthAnalytics.cpp in Sources */,
-				C182B4051B9D64B600AEAFB4 /* GrowthbeatCCInternal.m in Sources */,
-				C182B40A1B9D64B600AEAFB4 /* GrowthPushInstance.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5087E75617EB910900C73F5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				C1160D271BA9D5B1008A35DC /* GrowthAnalytics.cpp in Sources */,
+				C1160D2F1BA9D5B1008A35DC /* GrowthPush.cpp in Sources */,
+				C1160D2E1BA9D5B1008A35DC /* GrowthbeatCCInternal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1AC6FB16180E9959004C840B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "cocos2dx Mac";
-			targetProxy = 1AC6FB15180E9959004C840B /* PBXContainerItemProxy */;
-		};
 		1AC6FB25180E99E1004C840B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "cocos2dx iOS";
@@ -743,10 +609,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../../submodules/growthbeat-ios",
-				);
+				FRAMEWORK_SEARCH_PATHS = "${SRCROOT}/ios";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -770,6 +633,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "282e8de8-ae49-48fc-94c4-bf936b540c5b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -783,10 +647,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../../submodules/growthbeat-ios",
-				);
+				FRAMEWORK_SEARCH_PATHS = "${SRCROOT}/ios";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -808,74 +669,11 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "282e8de8-ae49-48fc-94c4-bf936b540c5b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
 				VALID_ARCHS = "arm64 armv7";
-			};
-			name = Release;
-		};
-		5087E76D17EB910900C73F5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = mac/Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					USE_FILE32API,
-					CC_TARGET_OS_MAC,
-					"COCOS2D_DEBUG=1",
-					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../cocos2d/cocos/platform/mac",
-					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
-				);
-				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(_COCOS_LIB_MAC_BEGIN)",
-					"$(_COCOS_LIB_MAC_END)",
-				);
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
-			};
-			name = Debug;
-		};
-		5087E76E17EB910900C73F5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = mac/Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					USE_FILE32API,
-					CC_TARGET_OS_MAC,
-					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../cocos2d/cocos/platform/mac",
-					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
-				);
-				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(_COCOS_LIB_MAC_BEGIN)",
-					"$(_COCOS_LIB_MAC_END)",
-				);
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Release;
 		};
@@ -884,6 +682,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuto Mukoyama (S4DY4ST4FA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -903,9 +702,11 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "282e8de8-ae49-48fc-94c4-bf936b540c5b";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -915,6 +716,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuto Mukoyama (S4DY4ST4FA)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -932,9 +734,11 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "282e8de8-ae49-48fc-94c4-bf936b540c5b";
 				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -943,7 +747,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GrowthbeatCocos2dxSample iOS" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GrowthbeatSample iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -952,16 +756,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "GrowthbeatCocos2dxSample Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5087E76D17EB910900C73F5D /* Debug */,
-				5087E76E17EB910900C73F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrowthbeatCocos2dxSample" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrowthbeatSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
