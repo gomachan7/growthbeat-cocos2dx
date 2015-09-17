@@ -47,7 +47,6 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		C1160CFC1BA9D487008A35DC /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFB1BA9D487008A35DC /* Growthbeat.framework */; };
 		C1160CFE1BA9D48F008A35DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */; };
 		C1160D001BA9D494008A35DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160CFF1BA9D494008A35DC /* Security.framework */; };
 		C1160D021BA9D49A008A35DC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160D011BA9D49A008A35DC /* AdSupport.framework */; };
@@ -64,6 +63,13 @@
 		C1160D311BA9D5B1008A35DC /* GrowthPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1160D241BA9D5B1008A35DC /* GrowthPush.mm */; };
 		C1160D321BA9D5B1008A35DC /* GrowthPushCCInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C1160D261BA9D5B1008A35DC /* GrowthPushCCInternal.m */; };
 		C1160D341BA9D7C8008A35DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1160D331BA9D7C8008A35DC /* CFNetwork.framework */; };
+		C124979D1BAA3E82000AFEE0 /* GrowthLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C12497931BAA3E82000AFEE0 /* GrowthLink.cpp */; settings = {ASSET_TAGS = (); }; };
+		C124979E1BAA3E82000AFEE0 /* GrowthLinkInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C12497961BAA3E82000AFEE0 /* GrowthLinkInstance.cpp */; settings = {ASSET_TAGS = (); }; };
+		C124979F1BAA3E82000AFEE0 /* GrowthLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = C12497981BAA3E82000AFEE0 /* GrowthLink.mm */; settings = {ASSET_TAGS = (); }; };
+		C12497A01BAA3E82000AFEE0 /* GrowthLinkCCinternal.m in Sources */ = {isa = PBXBuildFile; fileRef = C124979A1BAA3E82000AFEE0 /* GrowthLinkCCinternal.m */; settings = {ASSET_TAGS = (); }; };
+		C12497A11BAA3E82000AFEE0 /* GrowthLinkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = C124979C1BAA3E82000AFEE0 /* GrowthLinkPlugin.m */; settings = {ASSET_TAGS = (); }; };
+		C12497A91BAA3F29000AFEE0 /* GrowthLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12497A71BAA3F28000AFEE0 /* GrowthLink.framework */; };
+		C12497AA1BAA3F29000AFEE0 /* Growthbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12497A81BAA3F28000AFEE0 /* Growthbeat.framework */; };
 		C13D876C1BA9E4F7005A35CD /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
@@ -156,7 +162,6 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C1160CFB1BA9D487008A35DC /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
 		C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		C1160CFF1BA9D494008A35DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		C1160D011BA9D49A008A35DC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
@@ -187,6 +192,17 @@
 		C1160D251BA9D5B1008A35DC /* GrowthPushCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthPushCCInternal.h; sourceTree = "<group>"; };
 		C1160D261BA9D5B1008A35DC /* GrowthPushCCInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthPushCCInternal.m; sourceTree = "<group>"; };
 		C1160D331BA9D7C8008A35DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		C12497931BAA3E82000AFEE0 /* GrowthLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthLink.cpp; sourceTree = "<group>"; };
+		C12497941BAA3E82000AFEE0 /* GLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMacros.h; sourceTree = "<group>"; };
+		C12497951BAA3E82000AFEE0 /* GrowthLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLink.h; sourceTree = "<group>"; };
+		C12497961BAA3E82000AFEE0 /* GrowthLinkInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthLinkInstance.cpp; sourceTree = "<group>"; };
+		C12497981BAA3E82000AFEE0 /* GrowthLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrowthLink.mm; sourceTree = "<group>"; };
+		C12497991BAA3E82000AFEE0 /* GrowthLinkCCInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLinkCCInternal.h; sourceTree = "<group>"; };
+		C124979A1BAA3E82000AFEE0 /* GrowthLinkCCinternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthLinkCCinternal.m; sourceTree = "<group>"; };
+		C124979B1BAA3E82000AFEE0 /* GrowthLinkPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthLinkPlugin.h; sourceTree = "<group>"; };
+		C124979C1BAA3E82000AFEE0 /* GrowthLinkPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthLinkPlugin.m; sourceTree = "<group>"; };
+		C12497A71BAA3F28000AFEE0 /* GrowthLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthLink.framework; path = "../../submodules/growthbeat-ios/source/GrowthLink/GrowthLink.framework"; sourceTree = "<group>"; };
+		C12497A81BAA3F28000AFEE0 /* Growthbeat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growthbeat.framework; path = "../../submodules/growthbeat-ios/Growthbeat.framework"; sourceTree = "<group>"; };
 		C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.2.4.0.dylib; sourceTree = DEVELOPER_DIR; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -199,12 +215,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12497A91BAA3F29000AFEE0 /* GrowthLink.framework in Frameworks */,
+				C12497AA1BAA3F29000AFEE0 /* Growthbeat.framework in Frameworks */,
 				C13D876C1BA9E4F7005A35CD /* libiconv.2.4.0.dylib in Frameworks */,
 				C1160D341BA9D7C8008A35DC /* CFNetwork.framework in Frameworks */,
 				C1160D021BA9D49A008A35DC /* AdSupport.framework in Frameworks */,
 				C1160D001BA9D494008A35DC /* Security.framework in Frameworks */,
 				C1160CFE1BA9D48F008A35DC /* SystemConfiguration.framework in Frameworks */,
-				C1160CFC1BA9D487008A35DC /* Growthbeat.framework in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -272,13 +289,14 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C12497A71BAA3F28000AFEE0 /* GrowthLink.framework */,
+				C12497A81BAA3F28000AFEE0 /* Growthbeat.framework */,
 				C13D876B1BA9E4F7005A35CD /* libiconv.2.4.0.dylib */,
 				C1160D331BA9D7C8008A35DC /* CFNetwork.framework */,
 				C1160D031BA9D4A7008A35DC /* libiconv.2.4.0.tbd */,
 				C1160D011BA9D49A008A35DC /* AdSupport.framework */,
 				C1160CFF1BA9D494008A35DC /* Security.framework */,
 				C1160CFD1BA9D48E008A35DC /* SystemConfiguration.framework */,
-				C1160CFB1BA9D487008A35DC /* Growthbeat.framework */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -317,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				6911F2171BAA4E6F0013AD0B /* GrowthbeatCore */,
+				C12497911BAA3E82000AFEE0 /* GrowthLink */,
 				C1160D051BA9D5B1008A35DC /* GrowthAnalytics */,
 				C1160D111BA9D5B1008A35DC /* Growthbeat */,
 				C1160D1C1BA9D5B1008A35DC /* GrowthPush */,
@@ -501,6 +520,38 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
+		C12497911BAA3E82000AFEE0 /* GrowthLink */ = {
+			isa = PBXGroup;
+			children = (
+				C12497921BAA3E82000AFEE0 /* android */,
+				C12497941BAA3E82000AFEE0 /* GLMacros.h */,
+				C12497951BAA3E82000AFEE0 /* GrowthLink.h */,
+				C12497961BAA3E82000AFEE0 /* GrowthLinkInstance.cpp */,
+				C12497971BAA3E82000AFEE0 /* ios */,
+			);
+			path = GrowthLink;
+			sourceTree = "<group>";
+		};
+		C12497921BAA3E82000AFEE0 /* android */ = {
+			isa = PBXGroup;
+			children = (
+				C12497931BAA3E82000AFEE0 /* GrowthLink.cpp */,
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
+		C12497971BAA3E82000AFEE0 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				C12497981BAA3E82000AFEE0 /* GrowthLink.mm */,
+				C12497991BAA3E82000AFEE0 /* GrowthLinkCCInternal.h */,
+				C124979A1BAA3E82000AFEE0 /* GrowthLinkCCinternal.m */,
+				C124979B1BAA3E82000AFEE0 /* GrowthLinkPlugin.h */,
+				C124979C1BAA3E82000AFEE0 /* GrowthLinkPlugin.m */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -616,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1160D311BA9D5B1008A35DC /* GrowthPush.mm in Sources */,
+				C12497A01BAA3E82000AFEE0 /* GrowthLinkCCinternal.m in Sources */,
 				C1160D2A1BA9D5B1008A35DC /* GrowthAnalyticsCCInternal.m in Sources */,
 				C1160D281BA9D5B1008A35DC /* GrowthAnalyticsInstance.cpp in Sources */,
 				6911F2211BAA4E6F0013AD0B /* GrowthbeatCore.cpp in Sources */,
@@ -627,15 +679,19 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				C1160D301BA9D5B1008A35DC /* GrowthPushInstance.cpp in Sources */,
+				C124979F1BAA3E82000AFEE0 /* GrowthLink.mm in Sources */,
 				C1160D321BA9D5B1008A35DC /* GrowthPushCCInternal.m in Sources */,
 				C1160D2D1BA9D5B1008A35DC /* Growthbeat.mm in Sources */,
 				C1160D291BA9D5B1008A35DC /* GrowthAnalytics.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				C124979E1BAA3E82000AFEE0 /* GrowthLinkInstance.cpp in Sources */,
 				C1160D271BA9D5B1008A35DC /* GrowthAnalytics.cpp in Sources */,
 				C1160D2F1BA9D5B1008A35DC /* GrowthPush.cpp in Sources */,
+				C124979D1BAA3E82000AFEE0 /* GrowthLink.cpp in Sources */,
 				C1160D2E1BA9D5B1008A35DC /* GrowthbeatCCInternal.m in Sources */,
 				6911F2241BAA4E6F0013AD0B /* GrowthbeatCoreCCInternal.m in Sources */,
 				6911F2221BAA4E6F0013AD0B /* GrowthbeatCoreInstance.cpp in Sources */,
+				C12497A11BAA3E82000AFEE0 /* GrowthLinkPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +712,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "${SRCROOT}/ios";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -674,7 +731,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -694,7 +751,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "${SRCROOT}/ios";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -710,7 +768,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",

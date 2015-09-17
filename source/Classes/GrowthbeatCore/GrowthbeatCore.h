@@ -1,6 +1,7 @@
 //
 //  GrowthbeatCore.h
 //  growthbeat-cocos2dx
+//  GrowthbeatCocos2dxSample
 //
 //  Created by TABATAKATSUTOSHI on 2015/09/16.
 //
