@@ -4,10 +4,12 @@
 #include "Growthbeat.h"
 #include "GrowthPush.h"
 #include "GrowthAnalytics.h"
+#include "GrowthLink.h"
 
 USING_NS_CC;
 USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;
+USING_NS_GROWTHLINK;
 USING_NS_GROWTHANALYTICS;
 
 #ifdef COCOS2D_DEBUG
@@ -67,6 +69,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // Growthbeat initializing.
     Growthbeat::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
+    GrowthLink::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
     GrowthPush::getInstance()->requestDeviceToken("1000565500410", kGPEnvironment);
     Growthbeat::getInstance()->start();
 

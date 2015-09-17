@@ -29,6 +29,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="growthbeat-sample" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.growthbeat.message.view.MessageActivity"
@@ -49,7 +57,14 @@
                 <category android:name="com.growthbeat.GrowthbeatSample" />
             </intent-filter>
         </receiver>
-        
+        <receiver
+            android:name="com.growthbeat.link.InstallReferrerReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
     </application>
 
     <supports-screens
@@ -59,9 +74,7 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    
     <uses-permission android:name="android.permission.INTERNET" />
-    
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
