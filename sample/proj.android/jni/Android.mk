@@ -33,8 +33,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../Classes/GrowthAnalytics/android \
 					$(LOCAL_PATH)/../../Classes/GrowthbeatCore/ \
 					$(LOCAL_PATH)/../../Classes/GrowthbeatCore/android \
-                    $(LOCAL_PATH)/../../Classes/GrowthLink/ \
-                    $(LOCAL_PATH)/../../Classes/GrowthLink/android \
+                              $(LOCAL_PATH)/../../Classes/GrowthLink/ \
+                              $(LOCAL_PATH)/../../Classes/GrowthLink/android \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
                               $(LOCAL_PATH)/../../Classes/Growthbeat/ \
@@ -45,6 +45,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
                               $(LOCAL_PATH)/../../Classes/GrowthLink/android \
                               $(LOCAL_PATH)/../../Classes/GrowthAnalytics/ \
                               $(LOCAL_PATH)/../../Classes/GrowthAnalytics/android \
+                              $(LOCAL_PATH)/../../Classes/GrowthbeatCore/ \
+                              $(LOCAL_PATH)/../../Classes/GrowthbeatCore/android \
                               $(LOCAL_PATH)/../../Classes/GrowthLink/ \
                               $(LOCAL_PATH)/../../Classes/GrowthLink/android \
 
