@@ -1,4 +1,4 @@
-g//
+//
 //  GrowthbeatCoreCCInternal.m
 //  growthbeat-cocos2dx
 //
