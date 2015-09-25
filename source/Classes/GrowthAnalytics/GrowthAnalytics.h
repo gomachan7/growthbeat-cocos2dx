@@ -29,9 +29,11 @@ public:
     void track(const std::string& eventId, const std::map<std::string, std::string>& properties);
     void track(const std::string& eventId, GATrackOption option);
     void track(const std::string& eventId, const std::map<std::string, std::string>& properties, GATrackOption option);
+    void track(const std::string& _namespace,const std::string& eventId, const std::map<std::string, std::string>& properties, GATrackOption option);
 
     void tag(const std::string& tagId);
     void tag(const std::string& tagId, const std::string& value);
+    void tag(const std::string& _namespace,const std::string& tagId, const std::string& value);
 
     void open(void);
     void close(void);

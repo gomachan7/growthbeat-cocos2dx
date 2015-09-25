@@ -34,6 +34,13 @@
                                  properties:properties
                                      option:[self convertIntToGATrackOption:option]];
 }
++ (void)track:(NSString *)_namespace name:(NSString *)name properties:(NSDictionary *)properties option:(int)option {
+    [[GrowthAnalytics sharedInstance] track:_namespace
+                                       name:name
+                                 properties:properties
+                                     option:[self convertIntToGATrackOption:option]
+                                 completion:nil];
+}
 
 + (void)tag:(NSString *)tagId {
     [[GrowthAnalytics sharedInstance] tag:tagId];
@@ -41,6 +48,9 @@
 + (void)tag:(NSString *)tagId value:(NSString *)value {
     [[GrowthAnalytics sharedInstance] tag:tagId
                                     value:value];
+}
++ (void)tag:(NSString *)_namespace name:(NSString *)name value:(NSString *)value {
+    [[GrowthAnalytics sharedInstance] tag:_namespace name:name value:value completion:nil];
 }
 
 + (void)open {
