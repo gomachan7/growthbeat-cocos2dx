@@ -29,7 +29,7 @@ static cocos2d::Value parseJson2Value(const std::string &json){
     rapidjson::Document d;
 
     if (d.Parse<0>(json.c_str()).HasParseError()) {
-        CCLOGERROR("failed to parse json:%u", d.GetParseError());
+        CCLOGERROR("failed to parse json:%s", d.GetParseError());
         return cocos2d::Value::Null;
     }
     return convertJson2Value(d);
@@ -70,7 +70,7 @@ static cocos2d::Value convertJson2Map(const rapidjson::Value &v){
 
     cocos2d::ValueMap dictionary;
 
-    for (rapidjson::Value::ConstMemberIterator it = v.MemberBegin(); it != v.MemberEnd(); ++it) {
+    for (rapidjson::Value::ConstMemberIterator it = v.MemberonBegin(); it != v.MemberonEnd(); ++it) {
         cocos2d::Value value = convertJson2Value(it->value);
         dictionary.insert(std::make_pair(it->name.GetString(), value));
     }
@@ -82,7 +82,7 @@ static cocos2d::Value convertJson2Vector(const rapidjson::Value &v){
 
     cocos2d::ValueVector array;
 
-    for (rapidjson::Value::ConstValueIterator it = v.Begin(); it != v.End(); ++it) {
+    for (rapidjson::Value::ConstValueIterator it = v.onBegin(); it != v.onEnd(); ++it) {
         cocos2d::Value value = convertJson2Value(*it);
         array.push_back(value);
     }
