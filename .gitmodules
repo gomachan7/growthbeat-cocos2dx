@@ -4,6 +4,3 @@
 [submodule "submodules/growthbeat-android"]
 	path = submodules/growthbeat-android
 	url = https://github.com/SIROK/growthbeat-android.git
-[submodule "submodules/cocos2d-x"]
-	path = submodules/cocos2d-x
-	url = https://github.com/cocos2d/cocos2d-x
