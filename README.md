@@ -7,7 +7,7 @@
 ## Product requirements
 
 iOS6 ~ 8.4.1.
-Android 2.3 ~ 5.1.
+Android 2.3 ~ 6.0.
 
 Cocos SDK 3.0 above.
 
@@ -16,8 +16,6 @@ Cocos SDK 3.0 above.
 ```bash
 git clone https://github.com/SIROK/growthbeat-cocos2dx.git
 cd ./growthbeat-cocos2dx/ ; git submodule update --init --recursive
-cd ./submodules/cocos2d-x/ ; ./download-deps.py
-cd ../../ ; open sample/proj.ios_mac/GrowthbeatCocos2dxSample.xcodeproj
 ```
 
 ## Install
@@ -30,21 +28,6 @@ cd ../../ ; open sample/proj.ios_mac/GrowthbeatCocos2dxSample.xcodeproj
 1. Copy Growthbeat.framework to /path/to/your_project/proj.ios/Frameworks/
 1. Added Classes in folder and framework to Xcode project.
 1. Add dependecy frameworks. Foundation.framework, Security.framework, SystemConfiguration.framework, AdSupport.framework, CFNetwork.framework and libiconv.2.4.0.dylib.
-
-[2] Write Delegate to AppControler.mm
-
-```
-#import <"Growthbeat/GrowthPush.h">
-
-add delegate - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-
-//...summary...
-
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[GrowthPush sharedInstance] setDeviceToken:deviceToken];
-}
-
-```
 
 ### Android
 
@@ -85,7 +68,7 @@ add delegate - (void) application:(UIApplication *)application didRegisterForRem
         android:launchMode="singleInstance"
         android:theme="@android:style/Theme.Translucent" />
 	<receiver
-        android:name="com.growthpush.BroadcastReceiver"
+        android:name="com.growthpush.Cocos2dxBroadcastReceiver"
         android:permission="com.google.android.c2dm.permission.SEND" >
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -136,6 +119,8 @@ public class AppActivity extends Cocos2dxActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     GrowthbeatJNI.setContext(getApplicationContext());
+    GrowthLinkJNI.setContext(getApplicationContext());
+	GrowthLinkJNI.handleOpenUrl(getIntent().getData());
   }
 }
 ```
@@ -153,7 +138,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/GrowthAnalytics/GrowthAnalyticsInstance.cpp \
                    ../../Classes/GrowthAnalytics/android/GrowthAnalytics.cpp \
                    ../../Classes/GrowthLink/GrowthLinkInstance.cpp \
-                   ../../Classes/GrowthLink/android/GrowthLink.cpp
+                   ../../Classes/GrowthLink/android/GrowthLink.cpp \
+                   ../../Classes/GrowthbeatCore/GrowthbeatCoreInstance.cpp \
+                   ../../Classes/GrowthbeatCore/android/GrowthbeatCore.cpp \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../Classes/Growthbeat/ \
@@ -164,22 +151,30 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../Classes/GrowthAnalytics/android \
 					$(LOCAL_PATH)/../../Classes/GrowthLink/ \
 					$(LOCAL_PATH)/../../Classes/GrowthLink/android \
+					$(LOCAL_PATH)/../../Classes/GrowthbeatCore/ \
+                    $(LOCAL_PATH)/../../Classes/GrowthbeatCore/android \
 ```
 
 
 ## GrowthbeatCocos2dx how to use (AppDelegate.cpp)
 
 [1] Add the following to AppDelegate.cpp
+
 ```cpp
 #include "Growthbeat.h"
 #include "GrowthPush.h"
+#include "GrowthbeatCore.h"
 #include "GrowthAnalytics.h"
+#include "GrowthLink.h"
 ```
 
 [2] Add the following below #USING_NS_CC;
+
 ```cpp
 USING_NS_GROWTHBEAT;
 USING_NS_GROWTHPUSH;
+USING_NS_GROWTHBEATCORE;
+USING_NS_GROWTHLINK;
 USING_NS_GROWTHANALYTICS;
 
 #ifdef COCOS2D_DEBUG
@@ -191,6 +186,7 @@ GPEnvironment kGPEnvironment = GPEnvironmentProduction;
 ```
 
 [3] Add the following under bool AppDelegate::applicationDidFinishLaunching()
+
 ```cpp
     Growthbeat::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
     GrowthPush::getInstance()->requestDeviceToken("YOUR_SENDER_ID", kGPEnvironment);
@@ -198,25 +194,36 @@ GPEnvironment kGPEnvironment = GPEnvironmentProduction;
 ```
 
 [4] Add the following under bool AppDelegate::applicationWillEnterForeground()
+
 ```cpp
     Growthbeat::getInstance()->start();
 ```
 
 [5] Add the following under bool AppDelegate::applicationDidEnterBackground()
+
 ```cpp
     Growthbeat::getInstance()->stop();
 ```
 
 [6] If any places where the billing occurs, please add the following.
 (CATEGORY: item、 gacha、 continue or custom strings)
+
 ```cpp
 GrowthAnalytics::GetInstance()->purchase(PRICE, "CATEGORY", "PRODUCT");
 ```
 
 [7] Please set in a possible acquisition range user information.
+
 ```cpp
 GrowthAnalytics::GetInstance()->setUserId("USER_ID");
 GrowthAnalytics::GetInstance()->setAge(AGE);
 GrowthAnalytics::GetInstance()->setGender(GENDER);
 GrowthAnalytics::GetInstance()->setLevel(LEVEL);
 ```
+
+[8] Use deeplinking, Please set above.
+
+```cpp
+GrowthLink::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
+```
+
