@@ -21,7 +21,7 @@
 + (void)track:(NSString *)eventId properties:(NSDictionary *)properties;
 + (void)track:(NSString *)eventId option:(int)option;
 + (void)track:(NSString *)eventId properties:(NSDictionary *)properties option:(int)option;
-+ (void)track:(NSString *)_namespace name:(NSString *)name properties:(NSDictionary *)properties option:(int)option;
++ (void)track:(NSString *)_namespace name:(NSString *)eventId properties:(NSDictionary *)properties option:(int)option;
 
 + (void)tag:(NSString *)tagId;
 + (void)tag:(NSString *)tagId value:(NSString *)value;
