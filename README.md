@@ -224,6 +224,6 @@ GrowthAnalytics::GetInstance()->setLevel(LEVEL);
 [8] Use deeplinking, Please set above.
 
 ```cpp
-GrowthLink::getInstance()->initialize("PIaD6TaVt7wvKwao", "FD2w93wXcWlb68ILOObsKz5P3af9oVMo");
+GrowthLink::getInstance()->initialize("YOUR_APP_ID", "YOUR_CREDENTIAL_ID");
 ```
 
