@@ -14,9 +14,10 @@
 
 @interface GrowthbeatCCInternal : NSObject
 
-+ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
-+ (void)start;
-+ (void)stop;
++ (void)initializeIntentHandlers;
++ (void)addNoopIntentHandler;
++ (void)addUrlIntentHandler;
++ (void)addCustomIntentHandlerWithBlock:(BOOL(^)(GBCustomIntent *customIntent))block;
 + (void)setLoggerSilent:(bool)silent;
 
 @end

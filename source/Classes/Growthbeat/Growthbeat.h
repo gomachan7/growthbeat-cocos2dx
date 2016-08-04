@@ -13,6 +13,7 @@
 #include "GbMacros.h"
 
 NS_GROWTHBEAT_BEGIN
+typedef std::function<bool(std::map<std::string,std::string>)> OnHandle;
 
 class CC_DLL Growthbeat
 {
@@ -22,15 +23,14 @@ public:
 	~Growthbeat();
 	static Growthbeat* getInstance();
 
-	void initialize(const std::string &applicationId, const std::string &secret);
-
-	void start();
-
-	void stop();
-
+    void initializeIntentHandlers();
+    void addNoopIntentHandler();
+    void addUrlIntentHandler();
+    void addCustomIntentHandler(const OnHandle& handle);
 	void setLoggerSilent(bool silent);
 
 private:
+    OnHandle _handle;
  	static Growthbeat* instance;
 };
 

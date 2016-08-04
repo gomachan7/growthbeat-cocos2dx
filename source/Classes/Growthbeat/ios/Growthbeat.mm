@@ -17,16 +17,31 @@ USING_NS_CC;
 
 growthbeat::Growthbeat::Growthbeat() {};
 
-void growthbeat::Growthbeat::initialize(const std::string& applicationId, const std::string& credentialId) {
-    [GrowthbeatCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()]
-                                              credentialId:[NSString stringWithUTF8String:credentialId.c_str()]];
+void growthbeat::Growthbeat::initializeIntentHandlers(){
+    [GrowthbeatCCInternal initializeIntentHandlers];
+}
+void growthbeat::Growthbeat::addNoopIntentHandler(){
+    [GrowthbeatCCInternal addNoopIntentHandler];
+    
+}
+void growthbeat::Growthbeat::addUrlIntentHandler(){
+    [GrowthbeatCCInternal addUrlIntentHandler];
+    
+}
+void growthbeat::Growthbeat::addCustomIntentHandler(const OnHandle& handle){
+    [GrowthbeatCCInternal addCustomIntentHandlerWithBlock:^BOOL (GBCustomIntent *customIntent){
+        NSDictionary *dict = customIntent.extra;
+        std::map<std::string,std::string> extraMap;
+        for (NSString *key in [dict allKeys]) {
+            NSString *value= [dict objectForKey:key];
+            extraMap[[key UTF8String]] = [value UTF8String];
+        }
+        return handle(extraMap);
+    }];
 }
 
-void growthbeat::Growthbeat::start(void) {
-    [GrowthbeatCCInternal start];
-}
-void growthbeat::Growthbeat::stop(void) {
-    [GrowthbeatCCInternal stop];
+void growthbeat::Growthbeat::setLoggerSilent(bool silent) {
+    [GrowthbeatCCInternal setLoggerSilent:silent];
 }
 
 #endif

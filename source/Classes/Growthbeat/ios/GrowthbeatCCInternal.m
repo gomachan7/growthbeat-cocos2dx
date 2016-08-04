@@ -13,17 +13,26 @@
 
 @implementation GrowthbeatCCInternal
 
-+ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId {
-    [[Growthbeat sharedInstance] initializeWithApplicationId:applicationId
-                                                     credentialId:credentialId];
++ (void)initializeIntentHandlers{
+    [Growthbeat sharedInstance].intentHandlers = [NSMutableArray array];
 }
 
-+ (void)start {
-  [[Growthbeat sharedInstance] start];
++ (void)addNoopIntentHandler{
+    NSMutableArray *mutableArray = [[Growthbeat sharedInstance].intentHandlers mutableCopy];
+    [mutableArray addObject:[[GBNoopIntentHandler alloc] init]];
+    [Growthbeat sharedInstance].intentHandlers = mutableArray;
 }
 
-+ (void)stop {
-  [[Growthbeat sharedInstance] stop];
++ (void)addUrlIntentHandler{
+    NSMutableArray *mutableArray = [[Growthbeat sharedInstance].intentHandlers mutableCopy];
+    [mutableArray addObject:[[GBUrlIntentHandler alloc] init]];
+    [Growthbeat sharedInstance].intentHandlers = mutableArray;
+}
+
++ (void)addCustomIntentHandlerWithBlock:(BOOL(^)(GBCustomIntent *customIntent))block{
+    NSMutableArray *mutableArray = [[Growthbeat sharedInstance].intentHandlers mutableCopy];
+    [mutableArray addObject:[[GBCustomIntentHandler alloc] initWithBlock:block]];
+    [Growthbeat sharedInstance].intentHandlers = mutableArray;
 }
 
 + (void)setLoggerSilent:(bool)silent {
