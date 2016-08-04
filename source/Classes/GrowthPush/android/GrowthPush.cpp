@@ -53,16 +53,31 @@ JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_didOpenRemoteNotificat
 GrowthPush::GrowthPush(void)
 {}
 
-void GrowthPush::requestDeviceToken(GPEnvironment environment) {
+void GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, GPEnvironment environment) {
+    
+    JniMethodInfo t;
+    
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "initialize", "(Ljava/lang/String;Ljava/lang/String;I)V")) {
+        jstring jApplicationId = t.env->NewStringUTF(applicationId.c_str());
+        jstring jCredentialId = t.env->NewStringUTF(credentialId.c_str());
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jApplicationId, jCredentialId, (int) environment);
+        t.env->DeleteLocalRef(jApplicationId);
+        t.env->DeleteLocalRef(jcredentialId);
+        t.env->DeleteLocalRef(t.classID);
+    }
+    
+}
+
+void GrowthPush::requestDeviceToken() {
     // Do nothing on Android
 }
 
-void GrowthPush::requestDeviceToken(const std::string& senderId, GPEnvironment environment) {
+void GrowthPush::requestDeviceToken(const std::string& senderId) {
     JniMethodInfo t;
 
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;I)V")) {
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "requestRegistrationId", "(Ljava/lang/String;)V")) {
         jstring jSenderId = t.env->NewStringUTF(senderId.c_str());
-        t.env->CallStaticVoidMethod(t.classID, t.methodID, jSenderId, (int) environment);
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jSenderId);
         t.env->DeleteLocalRef(jSenderId);
         t.env->DeleteLocalRef(t.classID);
     }
