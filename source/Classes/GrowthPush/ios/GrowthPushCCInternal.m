@@ -7,11 +7,12 @@
 #include "ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
+#import <UIKit/UIKit.h>
 #import "GrowthPushCCInternal.h"
-
 #import <Growthbeat/GrowthPush.h>
 
 static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
+static NSMutableDictionary *renderHandlers = nil;
 
 @implementation GrowthPushCCInternal
 
@@ -25,8 +26,28 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 
 }
 
-+ (void) requestDeviceTokenWithEnvironment:(int)environment {
-    [[GrowthPush sharedInstance] requestDeviceTokenWithEnvironment:[self convertIntToGPEnvironment:environment]];
+- (id)init {
+    
+    if ((self = [super init])) {
+        renderHandlers = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
++ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment {
+    [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment]];
+}
+
++ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
+    [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment] adInfoEnable:adInfoEnable];
+}
+
++ (void) initialize:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
+    [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment] adInfoEnable:adInfoEnable];
+}
+
++ (void) requestDeviceToken {
+    [[GrowthPush sharedInstance] requestDeviceToken];
 }
 
 + (void) trackEvent:(NSString *)name {
@@ -35,6 +56,15 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 
 + (void) trackEvent:(NSString *)name value:(NSString *)value {
     [[GrowthPush sharedInstance] trackEvent:name value:value];
+}
+
++ (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler {
+    [[GrowthPush sharedInstance] trackEvent:name value:value showMessage:^(void(^renderMessage)()){
+        NSString *uuid = [[NSUUID UUID] UUIDString];
+        [renderHandlers setObject:[renderHandlers copy] forKey:uuid];
+        handler(uuid);
+    } failure:^(NSString *error){
+    }];
 }
 
 + (void) setTag:(NSString *)name {
@@ -60,6 +90,15 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
     }
     s_didReceiveRemoteNotificationBlock = Block_copy(block);
 
+}
+
++ (void) renderMessage:(NSString *)uuid {
+    void(^messageRenderHandler)();
+    messageRenderHandler = [renderHandlers objectForKey:uuid];
+    if(messageRenderHandler) {
+        messageRenderHandler();
+        [renderHandlers removeObjectForKey:uuid];
+    }
 }
 
 #pragma mark -

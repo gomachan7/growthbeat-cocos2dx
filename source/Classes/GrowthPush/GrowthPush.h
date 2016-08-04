@@ -21,6 +21,8 @@ NS_GROWTHPUSH_BEGIN
 #define gp_remote_notification_selector(_SELECTOR) (GPRemoteNotificationCallback)(&_SELECTOR)
 typedef void (cocos2d::Application::*GPRemoteNotificationCallback)(cocos2d::Value);
 
+typedef std::function<void(std::string)> ShowMessageHandle;
+
 class CC_DLL GrowthPush
 {
 public:
@@ -29,9 +31,9 @@ public:
 	~GrowthPush();
 	static GrowthPush* getInstance();
     
-    void initialize(const std::string applicationId, const std::string credentialId, GPEnvironment environment);
+    void initialize(const std::string& applicationId, const std::string& credentialId, GPEnvironment environment);
     
-    void initialize(const std::string applicationId, const std::string credentialId, GPEnvironment environment, bool adInfoEnable);
+    void initialize(const std::string& applicationId, const std::string& credentialId, GPEnvironment environment, bool adInfoEnable);
 
     /**
      * Set device token
@@ -59,6 +61,8 @@ public:
      * @param value Additional information
      */
     void trackEvent(const std::string &name, const std::string &value);
+    
+    void trackEvent(const std::string &name, const std::string &value, const ShowMessageHandle &showMessageHandle);
     
     /**
      * Create a tag for the device
@@ -94,6 +98,8 @@ public:
     // FIXME: for C++11
     // void setOpenNotificationCallback(const gpDidReceiveRemoteNotificationCallback &callback);
     void setOpenNotificationCallback(cocos2d::Application *target, GPRemoteNotificationCallback selector);
+    
+    void renderMessage(const std::string &udid);
     
 private:
     static GrowthPush* instance;

@@ -22,14 +22,22 @@ int environmentFromCocos(growthpush::GPEnvironment environment);
 growthpush::GrowthPush::GrowthPush(void)
 {}
 
-void growthpush::GrowthPush::requestDeviceToken(growthpush::GPEnvironment environment) {
-    [GrowthPushCCInternal requestDeviceTokenWithEnvironment:environment];
+void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment) {
+    [GrowthPushCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment];
 }
 
-void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId, growthpush::GPEnvironment environment) {
+void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment, bool adInfoEnable) {
+    [GrowthPushCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment adInfoEnable:adInfoEnable];
+}
+
+void growthpush::GrowthPush::requestDeviceToken() {
+    [GrowthPushCCInternal requestDeviceToken];
+}
+
+void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId) {
 
     CC_UNUSED_PARAM(senderId);
-    requestDeviceToken(environment);
+    requestDeviceToken();
 
 }
 
@@ -39,6 +47,13 @@ void growthpush::GrowthPush::trackEvent(const std::string& name) {
 
 void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value) {
     [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+}
+
+void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandle& handle) {
+    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()] showMessageHandler:^(NSString *uuid) {
+        std::string uuidStr = [uuid UTF8String];
+        handle(uuidStr);
+    }];
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name) {

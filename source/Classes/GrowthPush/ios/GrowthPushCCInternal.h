@@ -13,13 +13,17 @@
 @interface GrowthPushCCInternal : NSObject
 
 /* GrowthPush SDK interface */
-+ (void)requestDeviceTokenWithEnvironment:(int)environment;
++ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment;
++ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable;
++ (void)requestDeviceToken;
 + (void)trackEvent:(NSString *)name;
 + (void)trackEvent:(NSString *)name value:(NSString *)value;
++ (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler;
 + (void)setTag:(NSString *)name;
 + (void)setTag:(NSString *)name value:(NSString *)value;
 + (void)setDeviceTags;
 + (void)clearBadge;
++ (void) renderMessage:(NSString *)uuid;
 
 /* ANPs callback method */
 + (void)setDidReceiveNotificationBlock:(void(^) (NSString * json))block;

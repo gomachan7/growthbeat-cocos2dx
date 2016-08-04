@@ -29,25 +29,34 @@ static const char *const JavaClassName = "com/growthpush/GrowthPushJNI";
 // static gpDidReceiveRemoteNotificationCallback s_callback = nullptr;
 static cocos2d::Application *s_target = nullptr;
 static GPRemoteNotificationCallback s_selector = nullptr;
+static std::function<void(std::string)> s_showmessage_selector = nullptr;
 
 extern "C" {
-JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_didOpenRemoteNotification(JNIEnv *env, jobject thiz, jstring jJson) {
-    // FIXME: for C++11
-
-    /*
-    if (s_callback != nullptr) {
-        std::string json = JniHelper::jstring2string(jJson);
-        auto jsonMap = GPJsonHelper::parseJson2Map(json.c_str());
-        s_callback(jsonMap);
+    JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_didOpenRemoteNotification(JNIEnv *env, jobject thiz, jstring jJson) {
+        // FIXME: for C++11
+        
+        /*
+         if (s_callback != nullptr) {
+         std::string json = JniHelper::jstring2string(jJson);
+         auto jsonMap = GPJsonHelper::parseJson2Map(json.c_str());
+         s_callback(jsonMap);
+         }
+         */
+        if ((s_target != nullptr) && (s_selector != nullptr)) {
+            std::string json = JniHelper::jstring2string(jJson);
+            auto jsonValue = growthbeat::GbJsonHelper::parseJson2Value(json.c_str());
+            (s_target->*s_selector)(jsonValue);
+        }
     }
-     */
-    if ((s_target != nullptr) && (s_selector != nullptr)) {
-        std::string json = JniHelper::jstring2string(jJson);
-        auto jsonValue = growthbeat::GbJsonHelper::parseJson2Value(json.c_str());
-        (s_target->*s_selector)(jsonValue);
-    }
-}
 
+    JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_showMessageHandler(JNIEnv *env, jobject thiz, jstring jUDID) {
+        
+        if(s_showmessage_selector != nullptr) {
+            std::string udid = JniHelper::jstring2string(jUDID);
+            (s_showmessage_selector)(udid);
+        }
+    }
+    
 }
 
 GrowthPush::GrowthPush(void)
@@ -106,6 +115,21 @@ void GrowthPush::trackEvent(const std::string& name, const std::string& value) {
         t.env->DeleteLocalRef(t.classID);
     }
 }
+
+void GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandle &showMessageHandle) {
+    JniMethodInfo t;
+    
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "trackEventWithShowMessageHandler", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+        s_showmessage_selector = showMessageHandle;
+        jstring jName = t.env->NewStringUTF(name.c_str());
+        jstring jValue = t.env->NewStringUTF(value.c_str());
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jName, jValue);
+        t.env->DeleteLocalRef(jName);
+        t.env->DeleteLocalRef(jValue);
+        t.env->DeleteLocalRef(t.classID);
+    }
+}
+
 
 void GrowthPush::setTag(const std::string& name) {
     JniMethodInfo t;
