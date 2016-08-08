@@ -5,7 +5,7 @@ import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.growthbeat.GrowthbeatCore;
+import com.growthbeat.Growthbeat;
 import com.growthpush.bridge.ExternalFrameworkBridge;
 
 public class Cocos2dxBridge extends ExternalFrameworkBridge {
@@ -13,7 +13,7 @@ public class Cocos2dxBridge extends ExternalFrameworkBridge {
 	@Override
 	protected void callbackExternalFramework(final String customFiled) {
 
-		if (GrowthbeatCore.getInstance().getClient() == null) {
+		if (Growthbeat.getInstance().getClient() == null) {
 			new Handler(Looper.getMainLooper()).post(new Runnable() {
 				@Override
 				public void run() {
