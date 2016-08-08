@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Growthbeat/Growthbeat.h>
-#import <GrowthLink/GrowthLink.h>
+
 @interface GrowthLinkCCInternal : NSObject
 
 + (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;

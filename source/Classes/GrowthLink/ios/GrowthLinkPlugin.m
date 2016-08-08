@@ -9,7 +9,7 @@
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #include "GrowthLinkPlugin.h"
-#import <GrowthLink/GrowthLink.h>
+#import <Growthbeat/GrowthLink.h>
 #import <objc/runtime.h>
 
 @implementation UIApplication (GrowthLinkPlugin)
