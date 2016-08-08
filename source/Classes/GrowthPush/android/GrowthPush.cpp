@@ -49,7 +49,7 @@ extern "C" {
         }
     }
 
-    JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_showMessageHandler(JNIEnv *env, jobject thiz, jstring jUDID) {
+    JNIEXPORT void JNICALL Java_com_growthpush_GrowthPushJNI_showMessageHandler(JNIEnv *env, jobject thiz, jstring jUDID) {
         
         if(s_showmessage_selector != nullptr) {
             std::string udid = JniHelper::jstring2string(jUDID);
@@ -166,6 +166,19 @@ void GrowthPush::setDeviceTags(void) {
 
 void GrowthPush::clearBadge(void) {
     // Do nothing on Android
+}
+
+void GrowthPush::renderMessage(const std::string& uuid) {
+    
+    JniMethodInfo t;
+    
+    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "renderMessage", "(Ljava/lang/String;)V")) {
+        jstring jUUID = t.env->NewStringUTF(uuid.c_str());
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jUUID);
+        t.env->DeleteLocalRef(jUUID);
+        t.env->DeleteLocalRef(t.classID);
+    }
+    
 }
 
 // FIXME: for C++11

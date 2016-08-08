@@ -61,7 +61,7 @@ static NSMutableDictionary *renderHandlers = nil;
 + (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler {
     [[GrowthPush sharedInstance] trackEvent:name value:value showMessage:^(void(^renderMessage)()){
         NSString *uuid = [[NSUUID UUID] UUIDString];
-        [renderHandlers setObject:[renderHandlers copy] forKey:uuid];
+        [renderHandlers setObject:[renderMessage copy] forKey:uuid];
         handler(uuid);
     } failure:^(NSString *error){
     }];

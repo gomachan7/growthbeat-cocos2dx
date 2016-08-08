@@ -23,7 +23,7 @@
 + (void)setTag:(NSString *)name value:(NSString *)value;
 + (void)setDeviceTags;
 + (void)clearBadge;
-+ (void) renderMessage:(NSString *)uuid;
++ (void)renderMessage:(NSString *)uuid;
 
 /* ANPs callback method */
 + (void)setDidReceiveNotificationBlock:(void(^) (NSString * json))block;
