@@ -16,10 +16,9 @@
 NS_GROWTHPUSH_BEGIN
 
 /* APNS/GCM did receive callback function */
-// FIXME: for C++11
-// typedef std::function<void(cocos2d::Value)> gpDidReceiveRemoteNotificationCallback;
-#define gp_remote_notification_selector(_SELECTOR) (GPRemoteNotificationCallback)(&_SELECTOR)
-typedef void (cocos2d::Application::*GPRemoteNotificationCallback)(cocos2d::Value);
+typedef std::function<void(cocos2d::Value)> gpDidReceiveRemoteNotificationCallback;
+//#define gp_remote_notification_selector(_SELECTOR) (GPRemoteNotificationCallback)(&_SELECTOR)
+//typedef void (cocos2d::Application::*GPRemoteNotificationCallback)(cocos2d::Value);
 
 typedef std::function<void(std::string)> ShowMessageHandle;
 
@@ -62,7 +61,7 @@ public:
      */
     void trackEvent(const std::string &name, const std::string &value);
     
-    void trackEvent(const std::string &name, const std::string &value, const ShowMessageHandle &showMessageHandle);
+    void trackEvent(const std::string &name, const std::string &value, const growthpush::ShowMessageHandle& showMessageHandle);
     
     /**
      * Create a tag for the device
@@ -95,9 +94,8 @@ public:
      * @param target The target which wants to observe notification events.
      * @param selector The callback function which will be invoked when the specified notification event was posted.
      */
-    // FIXME: for C++11
-    // void setOpenNotificationCallback(const gpDidReceiveRemoteNotificationCallback &callback);
-    void setOpenNotificationCallback(cocos2d::Application *target, GPRemoteNotificationCallback selector);
+     void setOpenNotificationCallback(const gpDidReceiveRemoteNotificationCallback &callback);
+//    void setOpenNotificationCallback(cocos2d::Application *target, GPRemoteNotificationCallback selector);
     
     void renderMessage(const std::string &udid);
     

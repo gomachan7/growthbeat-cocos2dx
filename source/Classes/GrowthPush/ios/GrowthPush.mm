@@ -49,11 +49,13 @@ void growthpush::GrowthPush::trackEvent(const std::string& name, const std::stri
     [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
 }
 
-void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandle& handle) {
+void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const growthpush::ShowMessageHandle& handle) {
+
     [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()] showMessageHandler:^(NSString *uuid) {
         std::string uuidStr = [uuid UTF8String];
         handle(uuidStr);
     }];
+    
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name) {
@@ -72,17 +74,15 @@ void growthpush::GrowthPush::clearBadge(void) {
     [GrowthPushCCInternal clearBadge];
 }
 
-// FIXME: for C++11
-// void growthpush::GrowthPush::setOpenNotificationCallback(const growthpush::gpDidReceiveRemoteNotificationCallback
-// &callback)
-void growthpush::GrowthPush::setOpenNotificationCallback(Application *target, growthpush::GPRemoteNotificationCallback selector) {
+void growthpush::GrowthPush::renderMessage(const std::string& uuid) {
+    [GrowthPushCCInternal renderMessage:[NSString stringWithUTF8String:uuid.c_str()]];
+}
 
-    CCAssert(target, "target should not be NULL");
-    CCAssert(selector, "selector should not be NULL");
+void growthpush::GrowthPush::setOpenNotificationCallback(const growthpush::gpDidReceiveRemoteNotificationCallback& callback) {
 
     [GrowthPushCCInternal setDidReceiveNotificationBlock:^(NSString *json) {
-         cocos2d::Value jsonValue = growthbeat::GbJsonHelper::parseJson2Value([json UTF8String]);
-         (target->*selector)(jsonValue);
+        cocos2d::Value jsonValue = growthbeat::GbJsonHelper::parseJson2Value([json UTF8String]);
+        callback(jsonValue);
      }];
 
 }
