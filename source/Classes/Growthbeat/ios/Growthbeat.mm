@@ -29,6 +29,8 @@ void growthbeat::Growthbeat::addUrlIntentHandler(){
     
 }
 void growthbeat::Growthbeat::addCustomIntentHandler(const OnHandle& handle){
+    
+    __block auto intentOnHandle = handle;
     [GrowthbeatCCInternal addCustomIntentHandlerWithBlock:^BOOL (GBCustomIntent *customIntent){
         NSDictionary *dict = customIntent.extra;
         std::map<std::string,std::string> extraMap;
@@ -36,7 +38,7 @@ void growthbeat::Growthbeat::addCustomIntentHandler(const OnHandle& handle){
             NSString *value= [dict objectForKey:key];
             extraMap[[key UTF8String]] = [value UTF8String];
         }
-        return handle(extraMap);
+        return intentOnHandle(extraMap);
     }];
 }
 
