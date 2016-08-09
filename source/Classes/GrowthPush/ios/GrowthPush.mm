@@ -23,15 +23,15 @@ growthpush::GrowthPush::GrowthPush(void)
 {}
 
 void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment) {
-    [GrowthPushCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment];
+    [[GrowthPushCCInternal sharedInstance] initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment];
 }
 
 void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment, bool adInfoEnable) {
-    [GrowthPushCCInternal initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment adInfoEnable:adInfoEnable];
+    [[GrowthPushCCInternal sharedInstance] initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment adInfoEnable:adInfoEnable];
 }
 
 void growthpush::GrowthPush::requestDeviceToken() {
-    [GrowthPushCCInternal requestDeviceToken];
+    [[GrowthPushCCInternal sharedInstance] requestDeviceToken];
 }
 
 void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId) {
@@ -42,40 +42,41 @@ void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId) {
 }
 
 void growthpush::GrowthPush::trackEvent(const std::string& name) {
-    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()]];
 }
 
 void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value) {
-    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
 }
 
-void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const growthpush::ShowMessageHandle& handle) {
+void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandler& showMessageHandler) {
 
-    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()] showMessageHandler:^(NSString *uuid) {
+    __block auto handler = showMessageHandler;
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()] showMessageHandler:^(NSString *uuid) {
         std::string uuidStr = [uuid UTF8String];
-        handle(uuidStr);
+        handler(uuidStr);
     }];
     
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name) {
-    [GrowthPushCCInternal setTag:[NSString stringWithUTF8String:name.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] setTag:[NSString stringWithUTF8String:name.c_str()]];
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name, const std::string& value) {
-    [GrowthPushCCInternal setTag:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] setTag:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
 }
 
 void growthpush::GrowthPush::setDeviceTags(void) {
-    [GrowthPushCCInternal setDeviceTags];
+    [[GrowthPushCCInternal sharedInstance] setDeviceTags];
 }
 
 void growthpush::GrowthPush::clearBadge(void) {
-    [GrowthPushCCInternal clearBadge];
+    [[GrowthPushCCInternal sharedInstance] clearBadge];
 }
 
 void growthpush::GrowthPush::renderMessage(const std::string& uuid) {
-    [GrowthPushCCInternal renderMessage:[NSString stringWithUTF8String:uuid.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] renderMessage:[NSString stringWithUTF8String:uuid.c_str()]];
 }
 
 void growthpush::GrowthPush::setOpenNotificationCallback(const growthpush::gpDidReceiveRemoteNotificationCallback& callback) {

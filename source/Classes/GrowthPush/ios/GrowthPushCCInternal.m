@@ -11,10 +11,40 @@
 #import "GrowthPushCCInternal.h"
 #import <Growthbeat/GrowthPush.h>
 
+static GrowthPushCCInternal *sharedInstance = nil;
 static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
-static NSMutableDictionary *renderHandlers = nil;
+
+@interface GrowthPushCCInternal () {
+    
+    NSMutableDictionary *renderHandlers;
+    
+}
+
+@property (nonatomic, strong) NSMutableDictionary *renderHandlers;
+
+@end
 
 @implementation GrowthPushCCInternal
+
+@synthesize renderHandlers;
+
++ (GrowthPushCCInternal *) sharedInstance {
+    @synchronized(self) {
+        if (!sharedInstance) {
+            sharedInstance = [[self alloc] init];
+        }
+        
+        return sharedInstance;
+    }
+}
+
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self.renderHandlers = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
 
 - (void) dealloc {
 
@@ -26,60 +56,53 @@ static NSMutableDictionary *renderHandlers = nil;
 
 }
 
-- (id)init {
-    
-    if ((self = [super init])) {
-        renderHandlers = [NSMutableDictionary dictionary];
-    }
-    return self;
-}
-
-+ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment {
+- (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment {
     [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment]];
 }
 
-+ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
+- (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
     [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment] adInfoEnable:adInfoEnable];
 }
 
-+ (void) initialize:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
+- (void) initialize:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable {
     [[GrowthPush sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId environment:[self convertIntToGPEnvironment:environment] adInfoEnable:adInfoEnable];
 }
 
-+ (void) requestDeviceToken {
+- (void) requestDeviceToken {
     [[GrowthPush sharedInstance] requestDeviceToken];
 }
 
-+ (void) trackEvent:(NSString *)name {
+- (void) trackEvent:(NSString *)name {
     [[GrowthPush sharedInstance] trackEvent:name];
 }
 
-+ (void) trackEvent:(NSString *)name value:(NSString *)value {
+- (void) trackEvent:(NSString *)name value:(NSString *)value {
     [[GrowthPush sharedInstance] trackEvent:name value:value];
 }
 
-+ (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler {
+- (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler {
+    
     [[GrowthPush sharedInstance] trackEvent:name value:value showMessage:^(void(^renderMessage)()){
         NSString *uuid = [[NSUUID UUID] UUIDString];
-        [renderHandlers setObject:[renderMessage copy] forKey:uuid];
+        [self.renderHandlers setObject:[renderMessage copy] forKey:uuid];
         handler(uuid);
     } failure:^(NSString *error){
     }];
 }
 
-+ (void) setTag:(NSString *)name {
+- (void) setTag:(NSString *)name {
     [[GrowthPush sharedInstance] setTag:name];
 }
 
-+ (void) setTag:(NSString *)name value:(NSString *)value {
+- (void) setTag:(NSString *)name value:(NSString *)value {
     [[GrowthPush sharedInstance] setTag:name value:value];
 }
 
-+ (void) setDeviceTags {
+- (void) setDeviceTags {
     [[GrowthPush sharedInstance] setDeviceTags];
 }
 
-+ (void) clearBadge {
+- (void) clearBadge {
     [[GrowthPush sharedInstance] clearBadge];
 }
 
@@ -92,12 +115,12 @@ static NSMutableDictionary *renderHandlers = nil;
 
 }
 
-+ (void) renderMessage:(NSString *)uuid {
+- (void) renderMessage:(NSString *)uuid {
     void(^messageRenderHandler)();
-    messageRenderHandler = [renderHandlers objectForKey:uuid];
+    messageRenderHandler = [self.renderHandlers objectForKey:uuid];
     if(messageRenderHandler) {
         messageRenderHandler();
-        [renderHandlers removeObjectForKey:uuid];
+        [self.renderHandlers removeObjectForKey:uuid];
     }
 }
 
@@ -154,7 +177,7 @@ static NSMutableDictionary *renderHandlers = nil;
 
 }
 
-+ (GPEnvironment) convertIntToGPEnvironment:(int)environment {
+- (GPEnvironment) convertIntToGPEnvironment:(int)environment {
 
     switch (environment) {
         case 1:
