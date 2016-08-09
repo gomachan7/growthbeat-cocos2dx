@@ -7,7 +7,7 @@
 //  Copyright (c) 2013年 TSURUDA Ryo. All rights reserved.
 //
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
 # include "GrowthPush.h"
@@ -25,28 +25,18 @@ USING_NS_GROWTHPUSH;
 
 static const char *const JavaClassName = "com/growthpush/GrowthPushJNI";
 
-// FIXME: for C++11
-// static gpDidReceiveRemoteNotificationCallback s_callback = nullptr;
-static cocos2d::Application *s_target = nullptr;
-static GPRemoteNotificationCallback s_selector = nullptr;
+static gpDidReceiveRemoteNotificationCallback s_callback = nullptr;
 static std::function<void(std::string)> s_showmessage_selector = nullptr;
 
 extern "C" {
     JNIEXPORT void JNICALL Java_com_growthpush_Cocos2dxBridge_didOpenRemoteNotification(JNIEnv *env, jobject thiz, jstring jJson) {
-        // FIXME: for C++11
         
-        /*
          if (s_callback != nullptr) {
-         std::string json = JniHelper::jstring2string(jJson);
-         auto jsonMap = GPJsonHelper::parseJson2Map(json.c_str());
-         s_callback(jsonMap);
+             std::string json = JniHelper::jstring2string(jJson);
+             auto jsonValue = growthbeat::GbJsonHelper::parseJson2Value(json.c_str());
+             s_callback(jsonValue);
          }
-         */
-        if ((s_target != nullptr) && (s_selector != nullptr)) {
-            std::string json = JniHelper::jstring2string(jJson);
-            auto jsonValue = growthbeat::GbJsonHelper::parseJson2Value(json.c_str());
-            (s_target->*s_selector)(jsonValue);
-        }
+        
     }
 
     JNIEXPORT void JNICALL Java_com_growthpush_GrowthPushJNI_showMessageHandler(JNIEnv *env, jobject thiz, jstring jUDID) {
@@ -71,7 +61,7 @@ void GrowthPush::initialize(const std::string& applicationId, const std::string&
         jstring jCredentialId = t.env->NewStringUTF(credentialId.c_str());
         t.env->CallStaticVoidMethod(t.classID, t.methodID, jApplicationId, jCredentialId, (int) environment);
         t.env->DeleteLocalRef(jApplicationId);
-        t.env->DeleteLocalRef(jcredentialId);
+        t.env->DeleteLocalRef(jCredentialId);
         t.env->DeleteLocalRef(t.classID);
     }
     
@@ -116,11 +106,11 @@ void GrowthPush::trackEvent(const std::string& name, const std::string& value) {
     }
 }
 
-void GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandle &showMessageHandle) {
+void GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandler&showMessageHandler) {
     JniMethodInfo t;
     
     if (JniHelper::getStaticMethodInfo(t, JavaClassName, "trackEventWithShowMessageHandler", "(Ljava/lang/String;Ljava/lang/String;)V")) {
-        s_showmessage_selector = showMessageHandle;
+        s_showmessage_selector = showMessageHandler;
         jstring jName = t.env->NewStringUTF(name.c_str());
         jstring jValue = t.env->NewStringUTF(value.c_str());
         t.env->CallStaticVoidMethod(t.classID, t.methodID, jName, jValue);
@@ -181,16 +171,8 @@ void GrowthPush::renderMessage(const std::string& uuid) {
     
 }
 
-// FIXME: for C++11
-// void GrowthPush::setOpenNotificationCallback(const gpDidReceiveRemoteNotificationCallback &callback)
-void GrowthPush::setOpenNotificationCallback(Application *target, GPRemoteNotificationCallback selector) {
-    // s_callback = callback;
-    CCAssert(target, "target should not be NULL");
-    CCAssert(selector, "selector should not be NULL");
-
-    s_target = target;
-    s_selector = selector;
-
+void GrowthPush::setOpenNotificationCallback(const gpDidReceiveRemoteNotificationCallback &callback) {
+    s_callback = callback;
 }
 
 #endif

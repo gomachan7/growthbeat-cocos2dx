@@ -7,7 +7,7 @@
 //
 
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #import "GrowthLinkCCInternal.h"

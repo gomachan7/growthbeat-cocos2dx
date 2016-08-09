@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 SIROK, Inc. All rights reserved.
 //
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
 #include "Growthbeat.h"
@@ -16,6 +16,7 @@
 
 #include "cocos2d.h"
 #include "platform/android/jni/JniHelper.h"
+#include "../GbJsonHelper.h"
 
 USING_NS_CC;
 USING_NS_GROWTHBEAT;
@@ -23,39 +24,21 @@ USING_NS_GROWTHBEAT;
 static std::function<bool(std::map<std::string,std::string>)> s_selector = nullptr;
 extern "C"
 {
-    JNIEXPORT void JNICALL Java_com_growthbeat_intenthandler_JavaNativeListener_onHandled(JNIEnv* env, jobject thiz, jlong delegate, jstring jJson)
+    JNIEXPORT void JNICALL Java_com_growthbeat_intenthandler_IntentHandlerJNI_onHandled(JNIEnv* env, jobject thiz, jstring jJson)
     {
         if (s_selector != nullptr) {
             std::string json = JniHelper::jstring2string(jJson);
-            rapidjson::Document doc;
-            
-            doc.Parse<0>(json.c_str());
-            bool error = doc.HasParseError();
-            if(error){
-                printf("parse error\n");
-                return;
-            }
-            std::map<std::string,std::string> extraMap;
-            for(rapidjson::Value::ConstMemberIterator itr = doc.MemberonBegin();
-                itr != doc.MemberonEnd(); itr++)
-            {
-                const char* name = itr->name.GetString();
-                const char* value = itr->value.GetString();
-                extraMap[std::string(name)] = std::string(value);
-            }
-            (s_selector)(extraMap);
+            (s_selector)(growthbeat::GbJsonHelper::parseJson2Map(json.c_str()));
         }
     }
 };
 
-static const char *const JavaClassName = "com/growthbeat/GrowthbeatJNI";
-
 growthbeat::Growthbeat::Growthbeat() {};
 
-void Growthbeat:initializeIntentHandlers(void){
+void Growthbeat::initializeIntentHandlers(void){
     JniMethodInfo t;
     
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "initializeIntentHandlers", "()V")) {
+    if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "initializeIntentHandlers", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
     }
@@ -64,7 +47,7 @@ void Growthbeat:initializeIntentHandlers(void){
 void Growthbeat::addNoopIntentHandler(void){
     JniMethodInfo t;
     
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "addNoopIntentHandler", "()V")) {
+    if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addNoopIntentHandler", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
     }
@@ -73,7 +56,7 @@ void Growthbeat::addNoopIntentHandler(void){
 void Growthbeat::addUrlIntentHandler(void){
     JniMethodInfo t;
     
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "addUrlIntentHandler", "()V")) {
+    if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addUrlIntentHandler", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
     }
@@ -82,13 +65,20 @@ void Growthbeat::addUrlIntentHandler(void){
 void Growthbeat::addCustomIntentHandler(const OnHandle& handle){
     CCAssert(handle, "selector should not be NULL");
     s_selector = handle;
+    
+    JniMethodInfo t;
+    if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addCustomIntentHandler", "()V")) {
+        t.env->CallStaticVoidMethod(t.classID, t.methodID);
+        t.env->DeleteLocalRef(t.classID);
+    }
+    
 }
 
 
 void Growthbeat::setLoggerSilent(bool silent) {
     JniMethodInfo t;
 
-    if (JniHelper::getStaticMethodInfo(t, JavaClassName, "setLoggerSilent", "(Z)V")) {
+    if (JniHelper::getStaticMethodInfo(t, "com/growthbeat/GrowthbeatJNI", "setLoggerSilent", "(Z)V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID, silent);
         t.env->DeleteLocalRef(t.classID);
     }

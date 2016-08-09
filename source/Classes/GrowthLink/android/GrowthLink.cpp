@@ -6,7 +6,7 @@
 //
 //
 
-#include "cCconfig.h"
+#include "base/ccConfig.h"
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
