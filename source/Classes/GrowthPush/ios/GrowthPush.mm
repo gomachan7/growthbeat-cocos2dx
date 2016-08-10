@@ -2,7 +2,8 @@
 
 //  GrowthPush.mm
 //
-//  Created by TSURUDA Ryo on 2013/12/07.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #include "base/ccConfig.h"
@@ -56,7 +57,7 @@ void growthpush::GrowthPush::trackEvent(const std::string& name, const std::stri
         std::string uuidStr = [uuid UTF8String];
         handler(uuidStr);
     }];
-    
+
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name) {

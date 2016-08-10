@@ -2,8 +2,8 @@
 //  GPAppDelegateWrapper.m
 //  pickaxe
 //
-//  Created by Kataoka Naoyuki on 2013/07/14.
-//  Copyright (c) 2013年 SIROK, Inc. All rights reserved.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #import "GPAppDelegateWrapper.h"

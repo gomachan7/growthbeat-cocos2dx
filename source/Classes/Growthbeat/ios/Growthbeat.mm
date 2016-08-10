@@ -2,8 +2,8 @@
 //  GrowthAnalytics.mm
 //  growthbeat-cocos2dx
 //
-//  Created by Shigeru Ogawa on 2015/09/04.
-//  Copyright (c) 2015 SIROK, Inc. All rights reserved.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #include "base/ccConfig.h"
@@ -22,14 +22,14 @@ void growthbeat::Growthbeat::initializeIntentHandlers(){
 }
 void growthbeat::Growthbeat::addNoopIntentHandler(){
     [GrowthbeatCCInternal addNoopIntentHandler];
-    
+
 }
 void growthbeat::Growthbeat::addUrlIntentHandler(){
     [GrowthbeatCCInternal addUrlIntentHandler];
-    
+
 }
 void growthbeat::Growthbeat::addCustomIntentHandler(const OnHandle& handle){
-    
+
     __block auto intentOnHandle = handle;
     [GrowthbeatCCInternal addCustomIntentHandlerWithBlock:^BOOL (GBCustomIntent *customIntent){
         NSDictionary *dict = customIntent.extra;

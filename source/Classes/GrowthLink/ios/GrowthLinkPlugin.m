@@ -2,8 +2,8 @@
 //  GrowthLinkPlugin.m
 //  growthbeat-cocos2dx
 //
-//  Created by TABATAKATSUTOSHI on 2015/09/15.
-//
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 #include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
@@ -17,7 +17,7 @@
 +(void)load
 {
     method_exchangeImplementations(class_getInstanceMethod(self, @selector(setDelegate:)), class_getInstanceMethod(self, @selector(setGrowthLinkDelegate:)));
-    
+
 }
 
 BOOL GLOpenURL(id self, SEL _cmd, id application, id url, id sourceApplication, id annotation) {
@@ -25,14 +25,14 @@ if ([self respondsToSelector:@selector(application:linkOpenURL:sourceApplication
     {
         [self application:application linkOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     }
-    
+
     if ([GrowthLink instancesRespondToSelector:@selector(handleOpenUrl:)])
     {
         [[GrowthLink sharedInstance] handleOpenUrl: url];
     }
-    
+
     return YES;
-    
+
 }
 
 - (void) setGrowthLinkDelegate:(id<UIApplicationDelegate>)delegate
@@ -43,7 +43,7 @@ if ([self respondsToSelector:@selector(application:linkOpenURL:sourceApplication
         [self setGrowthLinkDelegate:delegate];
         return;
     }
-    
+
     delegateClass = [delegate class];
     exchangeMethodImplementations(delegateClass, @selector(application:openURL:sourceApplication:annotation:),
                                   @selector(application:linkURL:sourceApplication:annotation:), (IMP)GLOpenURL, "v@:::");
@@ -54,7 +54,7 @@ static void exchangeMethodImplementations(Class class, SEL oldMethod, SEL newMet
 {
     Method method = nil;
     method = class_getInstanceMethod(class, oldMethod);
-    
+
     if (method)
     {
         class_addMethod(class, newMethod, impl, signature);

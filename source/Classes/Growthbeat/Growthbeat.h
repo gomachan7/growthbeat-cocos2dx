@@ -2,8 +2,8 @@
 //  Growthbeat.h
 //  growthbeat-cocos2dx
 //
-//  Created by Shigeru Ogawa on 2015/09/03.
-//  Copyright (c) 2015 SIROK Inc. All rights reserved.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #ifndef __GROWTHBEATPLUGIN_GROWTHBEAT_H__

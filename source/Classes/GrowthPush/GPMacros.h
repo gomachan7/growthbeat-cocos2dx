@@ -2,8 +2,8 @@
 //  GPMacros.h
 //  growthpush-cocos2dx
 //
-//  Created by TSURUDA Ryo on 2013/12/07.
-//  Copyright (c) 2013年 TSURUDA Ryo. All rights reserved.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #ifndef __GROWTHPUSHPLUGIN_GPMACROS_H__

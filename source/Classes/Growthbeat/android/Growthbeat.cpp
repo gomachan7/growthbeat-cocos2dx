@@ -2,8 +2,8 @@
 //  Growthbeat.cpp
 //  growthbeat-cocos2dx
 //
-//  Created by Shigeru Ogawa on 2015/02/04.
-//  Copyright (c) 2015 SIROK, Inc. All rights reserved.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #include "base/ccConfig.h"
@@ -37,7 +37,7 @@ growthbeat::Growthbeat::Growthbeat() {};
 
 void Growthbeat::initializeIntentHandlers(void){
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "initializeIntentHandlers", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -46,7 +46,7 @@ void Growthbeat::initializeIntentHandlers(void){
 
 void Growthbeat::addNoopIntentHandler(void){
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addNoopIntentHandler", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -55,7 +55,7 @@ void Growthbeat::addNoopIntentHandler(void){
 
 void Growthbeat::addUrlIntentHandler(void){
     JniMethodInfo t;
-    
+
     if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addUrlIntentHandler", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
@@ -65,13 +65,13 @@ void Growthbeat::addUrlIntentHandler(void){
 void Growthbeat::addCustomIntentHandler(const OnHandle& handle){
     CCAssert(handle, "selector should not be NULL");
     s_selector = handle;
-    
+
     JniMethodInfo t;
     if (JniHelper::getStaticMethodInfo(t, "com.growthbeat.intenthandler.IntentHandlerJNI", "addCustomIntentHandler", "()V")) {
         t.env->CallStaticVoidMethod(t.classID, t.methodID);
         t.env->DeleteLocalRef(t.classID);
     }
-    
+
 }
 
 

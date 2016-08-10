@@ -1,7 +1,8 @@
 //
 //  GrowthPushCCInternal.m
 //
-//  Created by TSURUDA Ryo on 2013/12/09.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
 #include "base/ccConfig.h"
@@ -15,9 +16,9 @@ static GrowthPushCCInternal *sharedInstance = nil;
 static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 
 @interface GrowthPushCCInternal () {
-    
+
     NSMutableDictionary *renderHandlers;
-    
+
 }
 
 @property (nonatomic, strong) NSMutableDictionary *renderHandlers;
@@ -33,7 +34,7 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
         if (!sharedInstance) {
             sharedInstance = [[self alloc] init];
         }
-        
+
         return sharedInstance;
     }
 }
@@ -81,7 +82,7 @@ static void (^s_didReceiveRemoteNotificationBlock)(NSString *json) = NULL;
 }
 
 - (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler {
-    
+
     [[GrowthPush sharedInstance] trackEvent:name value:value showMessage:^(void(^renderMessage)()){
         NSString *uuid = [[NSUUID UUID] UUIDString];
         [self.renderHandlers setObject:[renderMessage copy] forKey:uuid];

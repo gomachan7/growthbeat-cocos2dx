@@ -18,8 +18,8 @@ See the [support page](http://support.growthbeat.com/).
 ## Supported Environment
 
 * Cocos SDK 3.0 and later.
-* iOS 6.0 and later.
-* Android 2.3.3 and later.
+* iOS 8.0 and later.
+* Android 4.0.4 and later.
 
 ## License
 
