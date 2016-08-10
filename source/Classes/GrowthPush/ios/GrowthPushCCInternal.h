@@ -1,10 +1,11 @@
 //
 //  GrowthPushCCInternal.h
 //
-//  Created by TSURUDA Ryo on 2013/12/09.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #import <Foundation/Foundation.h>
@@ -12,14 +13,20 @@
 
 @interface GrowthPushCCInternal : NSObject
 
++ (GrowthPushCCInternal *) sharedInstance;
+
 /* GrowthPush SDK interface */
-+ (void)requestDeviceTokenWithEnvironment:(int)environment;
-+ (void)trackEvent:(NSString *)name;
-+ (void)trackEvent:(NSString *)name value:(NSString *)value;
-+ (void)setTag:(NSString *)name;
-+ (void)setTag:(NSString *)name value:(NSString *)value;
-+ (void)setDeviceTags;
-+ (void)clearBadge;
+- (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment;
+- (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId environment:(int)environment adInfoEnable:(BOOL)adInfoEnable;
+- (void)requestDeviceToken;
+- (void)trackEvent:(NSString *)name;
+- (void)trackEvent:(NSString *)name value:(NSString *)value;
+- (void) trackEvent:(NSString *)name value:(NSString *)value showMessageHandler:(void(^)(NSString *str))handler;
+- (void)setTag:(NSString *)name;
+- (void)setTag:(NSString *)name value:(NSString *)value;
+- (void)setDeviceTags;
+- (void)clearBadge;
+- (void)renderMessage:(NSString *)uuid;
 
 /* ANPs callback method */
 + (void)setDidReceiveNotificationBlock:(void(^) (NSString * json))block;

@@ -2,10 +2,11 @@
 
 //  GrowthPush.mm
 //
-//  Created by TSURUDA Ryo on 2013/12/07.
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #include "GrowthPush.h"
@@ -22,52 +23,68 @@ int environmentFromCocos(growthpush::GPEnvironment environment);
 growthpush::GrowthPush::GrowthPush(void)
 {}
 
-void growthpush::GrowthPush::requestDeviceToken(growthpush::GPEnvironment environment) {
-    [GrowthPushCCInternal requestDeviceTokenWithEnvironment:environment];
+void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment) {
+    [[GrowthPushCCInternal sharedInstance] initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment];
 }
 
-void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId, growthpush::GPEnvironment environment) {
+void growthpush::GrowthPush::initialize(const std::string& applicationId, const std::string& credentialId, growthpush::GPEnvironment environment, bool adInfoEnable) {
+    [[GrowthPushCCInternal sharedInstance] initializeWithApplicationId:[NSString stringWithUTF8String:applicationId.c_str()] credentialId:[NSString stringWithUTF8String:credentialId.c_str()] environment:environment adInfoEnable:adInfoEnable];
+}
+
+void growthpush::GrowthPush::requestDeviceToken() {
+    [[GrowthPushCCInternal sharedInstance] requestDeviceToken];
+}
+
+void growthpush::GrowthPush::requestDeviceToken(const std::string& senderId) {
 
     CC_UNUSED_PARAM(senderId);
-    requestDeviceToken(environment);
+    requestDeviceToken();
 
 }
 
 void growthpush::GrowthPush::trackEvent(const std::string& name) {
-    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()]];
 }
 
 void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value) {
-    [GrowthPushCCInternal trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+}
+
+void growthpush::GrowthPush::trackEvent(const std::string& name, const std::string& value, const ShowMessageHandler& showMessageHandler) {
+
+    __block auto handler = showMessageHandler;
+    [[GrowthPushCCInternal sharedInstance] trackEvent:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()] showMessageHandler:^(NSString *uuid) {
+        std::string uuidStr = [uuid UTF8String];
+        handler(uuidStr);
+    }];
+
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name) {
-    [GrowthPushCCInternal setTag:[NSString stringWithUTF8String:name.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] setTag:[NSString stringWithUTF8String:name.c_str()]];
 }
 
 void growthpush::GrowthPush::setTag(const std::string& name, const std::string& value) {
-    [GrowthPushCCInternal setTag:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
+    [[GrowthPushCCInternal sharedInstance] setTag:[NSString stringWithUTF8String:name.c_str()] value:[NSString stringWithUTF8String:value.c_str()]];
 }
 
 void growthpush::GrowthPush::setDeviceTags(void) {
-    [GrowthPushCCInternal setDeviceTags];
+    [[GrowthPushCCInternal sharedInstance] setDeviceTags];
 }
 
 void growthpush::GrowthPush::clearBadge(void) {
-    [GrowthPushCCInternal clearBadge];
+    [[GrowthPushCCInternal sharedInstance] clearBadge];
 }
 
-// FIXME: for C++11
-// void growthpush::GrowthPush::setOpenNotificationCallback(const growthpush::gpDidReceiveRemoteNotificationCallback
-// &callback)
-void growthpush::GrowthPush::setOpenNotificationCallback(Application *target, growthpush::GPRemoteNotificationCallback selector) {
+void growthpush::GrowthPush::renderMessage(const std::string& uuid) {
+    [[GrowthPushCCInternal sharedInstance] renderMessage:[NSString stringWithUTF8String:uuid.c_str()]];
+}
 
-    CCAssert(target, "target should not be NULL");
-    CCAssert(selector, "selector should not be NULL");
+void growthpush::GrowthPush::setOpenNotificationCallback(const growthpush::gpDidReceiveRemoteNotificationCallback& callback) {
 
     [GrowthPushCCInternal setDidReceiveNotificationBlock:^(NSString *json) {
-         cocos2d::Value jsonValue = growthbeat::GbJsonHelper::parseJson2Value([json UTF8String]);
-         (target->*selector)(jsonValue);
+        cocos2d::Value jsonValue = growthbeat::GbJsonHelper::parseJson2Value([json UTF8String]);
+        callback(jsonValue);
      }];
 
 }

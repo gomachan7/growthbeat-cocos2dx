@@ -2,11 +2,11 @@
 //  GrowthLink.mm
 //  growthbeat-cocos2dx
 //
-//  Created by TABATAKATSUTOSHI on 2015/09/07.
-//
+//  Created by Shigeru Ogawa on 2016/08/10.
+//  Copyright (c) 2016 SIROK, Inc. All rights reserved.
 //
 
-#include "ccConfig.h"
+#include "base/ccConfig.h"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 
